@@ -6,7 +6,7 @@ public class Account {
 
     public Account(String userName, String password){
         this.userName = userName;
-        this.password = userName;
+        this.password = password;
     }
 
     public void setUserName(String userName){

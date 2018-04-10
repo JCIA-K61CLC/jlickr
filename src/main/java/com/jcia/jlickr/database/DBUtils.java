@@ -37,11 +37,7 @@ public class DBUtils {
         if(connection == null) {
             throw new NullPointerException("Connection is null");
         }
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
     }
 
     public static DBUtils getInstance(){
@@ -52,7 +48,7 @@ public class DBUtils {
         if (statement == null){
             try {
                 statement =(Statement) connection.createStatement();
-                connection.close();
+//                connection.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }

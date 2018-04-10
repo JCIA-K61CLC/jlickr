@@ -13,13 +13,12 @@ public class ListAccount {
 
     static {
         DBUtils db = DBUtils.getInstance();
-        if(db == null)System.out.println("db null");
         String sqlCommand = "select name, password from accounts";
         ResultSet rs = db.retrieveData(sqlCommand);
         try {
             while (rs.next()){
                 Account acc = null;
-                acc = new Account(rs.getString(1), rs.getString(4));
+                acc = new Account(rs.getString("name"), rs.getString("password"));
                 accList.add(acc);
             }
         } catch (SQLException e) {
@@ -28,14 +27,14 @@ public class ListAccount {
     }
 
     public  List <Account> getInstance() {
+        ListAccount listAccount = new ListAccount();
         return accList;
     }
 
-    public static void main(String[] args){
+    public static void main(String [] argc) {
         ListAccount listAccount = new ListAccount();
-        List<Account> list= listAccount.getInstance();
-        for (int i = 0; i < list.size(); i ++){
-            System.out.println(list.get(i).toString());
+        for(int i = 0; i< accList.size(); i++) {
+            System.out.println(accList.get(i).toString());
         }
     }
 }
