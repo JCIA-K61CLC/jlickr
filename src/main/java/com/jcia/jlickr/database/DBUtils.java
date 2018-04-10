@@ -44,25 +44,29 @@ public class DBUtils {
         return dbUtils;
     }
 
-    private void createStatement(){
-        if (statement == null){
-            try {
-                statement =(Statement) connection.createStatement();
-//                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+//    private void createStatement(){
+//        if (statement == null){
+//            try {
+//                statement =(Statement) connection.createStatement();
+//            } catch (SQLException e) {
+//                e.printStackTrace();
+//            }
+//
+//        }
+//    }
+//    public ResultSet retrieveData(String sqlCommand) {
+//        try {
+//            createStatement();
+//            ResultSet resultSet = statement.executeQuery(sqlCommand);
+//            connection.close();
+//            return resultSet;
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
 
-        }
-    }
-    public ResultSet retrieveData(String sqlCommand) {
-        try {
-            createStatement();
-            ResultSet resultSet = statement.executeQuery(sqlCommand);
-            return resultSet;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
+    public static Connection getConnection() {
+        return connection;
     }
 }
