@@ -37,34 +37,13 @@ public class DBUtils {
         if(connection == null) {
             throw new NullPointerException("Connection is null");
         }
-
     }
 
     public static DBUtils getInstance(){
         return dbUtils;
     }
 
-//    private void createStatement(){
-//        if (statement == null){
-//            try {
-//                statement =(Statement) connection.createStatement();
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//
-//        }
-//    }
-//    public ResultSet retrieveData(String sqlCommand) {
-//        try {
-//            createStatement();
-//            ResultSet resultSet = statement.executeQuery(sqlCommand);
-//            connection.close();
-//            return resultSet;
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            return null;
-//        }
-//    }
+
 
     public static Connection getConnection() {
         return connection;

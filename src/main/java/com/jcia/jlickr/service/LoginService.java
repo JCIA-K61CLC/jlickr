@@ -2,17 +2,27 @@ package com.jcia.jlickr.service;
 
 import com.jcia.jlickr.dao.Account;
 import com.jcia.jlickr.dao.ListAccount;
+import com.jcia.jlickr.servlet.CheckAccount;
 
 import java.util.List;
 
 public class LoginService {
-    private List<Account> listAccount = ListAccount.getInstance();
+    private static List<Account> listAccount = ListAccount.getInstance();
 
-    public boolean CheckAcc(Account account){
+    public List<Account> getAllAccount() {
+        return listAccount;
+    }
+
+    public static Boolean CheckAcc(String username, String password){
         for (Account acc : listAccount){
-            if (account.getUserName().equalsIgnoreCase(acc.getUserName()) && account.getPassword().equalsIgnoreCase(acc.getPassword()));
+            if (acc.getUserName().equals(username) && acc.getPassword().equals(password))
                 return  true;
         }
         return false;
+    }
+    public static void main(String[] argc){
+        System.out.println(CheckAcc("NguyenToan", "toan"));
+        System.out.println(CheckAcc("abc", "toan"));
+
     }
 }

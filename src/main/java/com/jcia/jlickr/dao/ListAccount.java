@@ -36,8 +36,6 @@ public class ListAccount {
     }
     public static void main(String [] argc) {
         ListAccount listAccount = new ListAccount();
-        Account a = new Account("hoaithu","01-02-1998", "thu@gmail.com","hoaithu");
-        listAccount.addAccount(a);
         for(int i = 0; i< accList.size(); i++) {
             System.out.println(accList.get(i).toString());
         }
