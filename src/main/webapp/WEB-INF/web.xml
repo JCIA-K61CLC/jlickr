@@ -31,4 +31,13 @@
     <servlet-name>Next Login jsp</servlet-name>
     <url-pattern>/nextLogin</url-pattern>
   </servlet-mapping>
+
+    <!--<servlet>
+        <servlet-name>Register</servlet-name>
+        <servlet-class>com.jcia.jlickr.servlet.Register</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Register</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>-->
 </web-app>

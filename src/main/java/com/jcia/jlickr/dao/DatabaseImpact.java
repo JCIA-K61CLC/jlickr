@@ -5,9 +5,9 @@ import com.jcia.jlickr.database.DBUtils;
 import java.sql.*;
 
 public class DatabaseImpact {
-    static Connection connection = DBUtils.getConnection();
-    public static ResultSet retrieveData(String sqlCommand) {
 
+    public static ResultSet retrieveData(String sqlCommand) {
+        Connection connection = DBUtils.getConnection();
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sqlCommand);
@@ -19,6 +19,7 @@ public class DatabaseImpact {
     }
 
     public static void addAccountToDatabase(Account ac){
+        Connection connection = DBUtils.getConnection();
         String sqlCommand = "Insert INTO accounts value(?,?,?,?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sqlCommand);
@@ -34,4 +35,7 @@ public class DatabaseImpact {
         }
 
     }
+
+
+
 }

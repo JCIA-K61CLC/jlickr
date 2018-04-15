@@ -15,6 +15,11 @@
     User name: <input type="text" value="" name="username"/>
     Password: <input type="password" value="" name="password"/>
     <button type="submit" action = "NextLogin.jsp">Log in</button>
+    </br>
+    Don't have account? <a href="create.jsp">Create account</a>
+</form>
+</form>
+</form>
 </form>
 </body>
 </html>

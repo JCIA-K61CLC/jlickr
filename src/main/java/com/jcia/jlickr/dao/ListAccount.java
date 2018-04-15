@@ -23,6 +23,7 @@ public class ListAccount {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+
         }
     }
 
@@ -30,7 +31,7 @@ public class ListAccount {
         ListAccount listAccount = new ListAccount();
         return accList;
     }
-    public void addAccount(Account a) {
+    public static void addAccount(Account a) {
         accList.add(a);
         DatabaseImpact.addAccountToDatabase(a);
     }

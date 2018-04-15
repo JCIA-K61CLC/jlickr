@@ -21,7 +21,7 @@ public class LoginService {
         return false;
     }
     public static void main(String[] argc){
-        System.out.println(CheckAcc("NguyenToan", "toan"));
+        System.out.println(CheckAcc("hoaithu", "quangtuan"));
         System.out.println(CheckAcc("abc", "toan"));
 
     }

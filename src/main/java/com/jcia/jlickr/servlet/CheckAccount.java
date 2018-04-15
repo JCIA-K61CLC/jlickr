@@ -20,8 +20,9 @@ public class CheckAccount extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("Post");
         String action = req.getParameter("action");
-        if(action =="login"){
+        if(action.equals("login")){
             getAccount(req, resp);
         } else{
             forwardAccount(req, resp);
@@ -32,6 +33,8 @@ public class CheckAccount extends HttpServlet {
         resp.setContentType("text/html");
         String accountName = req.getParameter("username");
         String accountPassword = req.getParameter("password");
+        System.out.println(accountName +" "+ accountPassword);
+        System.out.println(loginService.CheckAcc(accountName,accountPassword));
         if(accountName != null && accountPassword != null) {
             Boolean check = loginService.CheckAcc(accountName, accountPassword);
             PrintWriter writer = resp.getWriter();
