@@ -10,22 +10,41 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Create your account</title>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box}
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+    </style>
 </head>
 <body>
 <h2>Create your account</h2>
 <h3 id="message"></h3>
 <h3 id="error"></h3>
 <h3 id="confirm"></h3>
-<form action="register" method="post">
-    Username: <input type="text" id="username" value="" name="username" oninput="checkAccount()">
+<form action="register" method="post" class="body">
+    Username: <input placeholder="Username" type="text" id="username" value="" name="username" oninput="checkAccount()">
     </br>
-    Password: <input type="password" id="password" value="" name="password1" oninput="checkPassword()">
+    Password: <input placeholder="Password" type="password" id="password" value="" name="password1" oninput="checkPassword()">
     </br>
-    Comfirm password: <input type="password" id="confirmPassword" value="" name="password2" oninput="checkConfirmPassword()">
+    Comfirm password: <input placeholder="Re-password" type="password" id="confirmPassword" value="" name="password2" oninput="checkConfirmPassword()">
     </br>
-    Birthday: <input type="text" id="birthdate" value="" name="birthdate">
+    Birthday: <input placeholder="dd/mm/yyyy" type="text" id="birthdate" value="" name="birthdate">
     </br>
-    Gmail: <input type="text" id="gmail" name ="gmail" value="">
+    Gmail: <input placeholder="abc@gmail.com" type="text" id="gmail" name ="gmail" value="">
     </br>
     <input type="submit" value="Create">
 </form>
