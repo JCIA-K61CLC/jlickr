@@ -8,7 +8,7 @@
 <display-name>Archetype Created Web Application</display-name>
   <servlet>
     <servlet-name>check account</servlet-name>
-    <servlet-class>com.jcia.jlickr.servlet.CheckAccount</servlet-class>
+    <servlet-class>com.jcia.jlickr.servlet.Authentication</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>check account</servlet-name>

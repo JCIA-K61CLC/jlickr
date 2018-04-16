@@ -3,10 +3,13 @@ package com.jcia.jlickr.dao;
 import com.jcia.jlickr.database.DBUtils;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class DatabaseImpact {
-
-    public static ResultSet retrieveData(String sqlCommand) {
+public class AccountDAO {
+    public AccountDAO() {
+    }
+    public ResultSet retrieveData(String sqlCommand) {
         Connection connection = DBUtils.getConnection();
         try {
             Statement statement = connection.createStatement();
@@ -18,7 +21,7 @@ public class DatabaseImpact {
         return  null;
     }
 
-    public static void addAccountToDatabase(Account ac){
+    public void addAccount(Account ac){
         Connection connection = DBUtils.getConnection();
         String sqlCommand = "Insert INTO accounts value(?,?,?,?)";
         try {
@@ -28,7 +31,7 @@ public class DatabaseImpact {
             ps.setString(3,ac.getGmail());
             ps.setString(4, ac.getPassword());
             ps.executeUpdate();
-            connection.close();
+//            connection.close();
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -36,6 +39,21 @@ public class DatabaseImpact {
 
     }
 
-
-
+    public List<Account> getAllAccounts(){
+        List<Account> accList = new ArrayList();
+        Connection connection = DBUtils.getConnection();
+        String sqlCommand = "select * from accounts";
+        ResultSet rs = retrieveData(sqlCommand);
+        try {
+            while (rs.next()){
+                Account acc = null;
+                acc = new Account(rs.getString("name"),rs.getString("birthdate"), rs.getString("gmail"), rs.getString("password"));
+                accList.add(acc);
+            }
+            return accList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

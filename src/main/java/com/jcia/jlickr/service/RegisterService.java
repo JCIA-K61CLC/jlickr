@@ -1,13 +1,14 @@
 package com.jcia.jlickr.service;
 
 import com.jcia.jlickr.dao.Account;
-import com.jcia.jlickr.dao.ListAccount;
+import com.jcia.jlickr.dao.AccountDAO;
 
 import java.util.List;
 
 public class RegisterService {
-    private static List<Account> list = ListAccount.getInstance();
     public static boolean checkUsernameExist(String username ) {
+        AccountDAO accountDAO = new AccountDAO();
+        List<Account> list = accountDAO.getAllAccounts();
         for (Account temp : list) {
             if (username.equals(temp.getUserName())) {
                 return true;
@@ -23,11 +24,7 @@ public class RegisterService {
         if (password.length() < 6) return false;
         else return true;
     }
-    public static List<Account> getInstance() {
-        return list;
-    }
-    public static void main(String[] args) {
-        List<Account> list = RegisterService.getInstance();
-        System.out.println(RegisterService.checkUsernameExist("hoaithu"));
-    }
+//    public static void main(String[] args) {
+//        System.out.println(checkUsernameExist("hoaithu"));
+//    }
 }

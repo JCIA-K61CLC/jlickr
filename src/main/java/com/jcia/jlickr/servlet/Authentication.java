@@ -11,16 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class CheckAccount extends HttpServlet {
-    LoginService loginService = new LoginService();
-
-    public CheckAccount(){
+public class Authentication extends HttpServlet {
+    public Authentication(){
         super();
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Post");
+        System.out.println("PostLogin");
         String action = req.getParameter("action");
         if(action.equals("login")){
             getAccount(req, resp);
@@ -34,9 +32,9 @@ public class CheckAccount extends HttpServlet {
         String accountName = req.getParameter("username");
         String accountPassword = req.getParameter("password");
         System.out.println(accountName +" "+ accountPassword);
-        System.out.println(loginService.CheckAcc(accountName,accountPassword));
+        System.out.println(LoginService.CheckAcc(accountName,accountPassword));
         if(accountName != null && accountPassword != null) {
-            Boolean check = loginService.CheckAcc(accountName, accountPassword);
+            Boolean check = LoginService.CheckAcc(accountName, accountPassword);
             PrintWriter writer = resp.getWriter();
             String nextJsp = "/NextLogin.jsp";
             if (check == false) {

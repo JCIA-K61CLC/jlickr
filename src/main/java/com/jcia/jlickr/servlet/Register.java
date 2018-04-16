@@ -1,12 +1,9 @@
 package com.jcia.jlickr.servlet;
 
 import com.jcia.jlickr.dao.Account;
-import com.jcia.jlickr.dao.DatabaseImpact;
-import com.jcia.jlickr.dao.ListAccount;
-import com.jcia.jlickr.database.DBUtils;
+import com.jcia.jlickr.dao.AccountDAO;
 import com.jcia.jlickr.service.RegisterService;
 
-import javax.imageio.spi.RegisterableService;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,13 +11,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/register")
 public class Register extends HttpServlet {
-    List<Account> list = ListAccount.getInstance();
+    AccountDAO accountDAO = new AccountDAO();
+
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("Post");
@@ -58,7 +55,7 @@ public class Register extends HttpServlet {
                     message = "Your account has been successfully created!";
                     request.setAttribute("message",message);
                     Account a = new Account(username,birthdate,gmail,password1);
-                    ListAccount.addAccount(a);
+                    accountDAO.addAccount(a);
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/createSuccess.jsp");
                     dispatcher.forward(request, response);
                 }

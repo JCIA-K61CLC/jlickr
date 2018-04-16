@@ -52,10 +52,11 @@
     </style>
 </head>
 <body>
-<c:if test="${message ne null}" style = "color:red">
-    ${message}
-</c:if>
+
 <form action="login" method ="post" class="form h1">
+    <c:if test="${message ne null}" style = "color:red">
+        ${message}
+    </c:if>
     <input type="hidden" name="action" value="login"/>
     <input placeholder="Username" type="text" value="" name="username"/>
     <input placeholder="Password" type="password" value="" name="password"/>
