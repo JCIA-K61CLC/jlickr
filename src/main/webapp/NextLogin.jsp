@@ -9,5 +9,8 @@
 <c:if test="${message ne null}">
     ${message}
 </c:if>
+</br>
+<a href="uploadImage.jsp">Upload Image</a>
+
 </body>
 </html>
