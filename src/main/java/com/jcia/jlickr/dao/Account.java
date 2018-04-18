@@ -1,6 +1,7 @@
 package com.jcia.jlickr.dao;
 
 public class Account {
+    int idUser;
     String userName;
     String password;
     String gmail;
@@ -13,6 +14,15 @@ public class Account {
         this.password = password;
 
     }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
     public void setUserName(String userName){
         this.userName = userName;
     }
@@ -47,6 +57,6 @@ public class Account {
 
     @Override
     public String toString() {
-        return "UserName = "+ this.userName+", Birthdate = "+this.birthdate+", Gmail = "+this.gmail +", Password = " + this.password;
+        return "ID = " + idUser+" UserName = "+ this.userName+", Birthdate = "+this.birthdate+", Gmail = "+this.gmail +", Password = " + this.password;
     }
 }

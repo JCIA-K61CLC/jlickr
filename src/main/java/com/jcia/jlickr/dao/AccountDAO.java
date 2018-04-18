@@ -23,7 +23,7 @@ public class AccountDAO {
 
     public void addAccount(Account ac){
         Connection connection = DBUtils.getConnection();
-        String sqlCommand = "Insert INTO accounts value(?,?,?,?)";
+        String sqlCommand = "Insert INTO accounts(nameuser, birthdate, gmail, password) value(?,?,?,?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sqlCommand);
             ps.setString(1, ac.getUserName());
@@ -47,7 +47,9 @@ public class AccountDAO {
         try {
             while (rs.next()){
                 Account acc = null;
-                acc = new Account(rs.getString("name"),rs.getString("birthdate"), rs.getString("gmail"), rs.getString("password"));
+                int idUser = rs.getInt("id_user");
+                acc = new Account(rs.getString("nameuser"),rs.getString("birthdate"), rs.getString("gmail"), rs.getString("password"));
+                acc.setIdUser(idUser);
                 accList.add(acc);
             }
             return accList;
