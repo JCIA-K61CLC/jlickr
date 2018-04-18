@@ -1,0 +1,23 @@
+create database data;
+use data;
+create table accounts(
+			id_user int not null auto_increment,
+			nameuser varchar(255) not null,
+			birthdate date not null,
+			gmail varchar(255) not null,
+			password varchar(255) not null,
+			primary key (id_user)
+		);
+insert into accounts(nameuser, birthdate, gmail, password)
+	values('Nguyen A', '1998-10-20', 'A@gmail.com', 'nguyenA');
+create table images(
+			id_user int not null,
+			link varchar(255) not null,
+			primary key (id_user, link),
+			FOREIGN KEY (id_user) REFERENCES accounts(id_user)
+		);
+grant all on data.* to username@localhost;
+
+
+
+
