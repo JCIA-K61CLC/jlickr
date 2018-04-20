@@ -1,5 +1,6 @@
 package com.jcia.jlickr.servlet;
 
+import com.jcia.jlickr.dao.Account;
 import com.jcia.jlickr.service.LoginService;
 
 import javax.servlet.RequestDispatcher;
@@ -11,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class Authentication extends HttpServlet {
-    public Authentication(){
+public class AuthenticationServlet extends HttpServlet {
+    public AuthenticationServlet(){
         super();
     }
 
@@ -31,18 +32,17 @@ public class Authentication extends HttpServlet {
         resp.setContentType("text/html");
         String accountName = req.getParameter("username");
         String accountPassword = req.getParameter("password");
-        System.out.println(accountName +" "+ accountPassword);
-        System.out.println(LoginService.CheckAcc(accountName,accountPassword));
         if(accountName != null && accountPassword != null) {
-            Boolean check = LoginService.CheckAcc(accountName, accountPassword);
+            Account check = LoginService.CheckAcc(accountName, accountPassword);
             PrintWriter writer = resp.getWriter();
-            String nextJsp = "/NextLogin.jsp";
-            if (check == false) {
+            String nextJsp = "/UploadImage.jsp";
+            if (check == null) {
                 nextJsp ="/Login.jsp";
                 req.setAttribute("message", "Login failed!");
             } else {
                 req.setAttribute("message", "Welcome, " + accountName + "!");
             }
+            req.setAttribute("idUser", check.getIdUser());
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJsp);
             dispatcher.forward(req, resp);
         }

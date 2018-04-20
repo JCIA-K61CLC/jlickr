@@ -1,11 +1,11 @@
 package com.jcia.jlickr.dao;
 
 public class Account {
-    int idUser;
-    String userName;
-    String password;
-    String gmail;
-    String birthdate;
+    private int idUser;
+    private String userName;
+    private String password;
+    private String gmail;
+    private String birthdate;
 
     public Account(String userName,String birthdate, String gmail, String password){
         this.userName = userName;

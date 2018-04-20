@@ -14,23 +14,15 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet(urlPatterns = "/register")
-public class Register extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
     AccountDAO accountDAO = new AccountDAO();
 
-
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("Post");
         String username = request.getParameter("username");
         String password1 = request.getParameter("password1");
         String password2 = request.getParameter("password2");
         String birthdate = request.getParameter("birthdate");
         String gmail = request.getParameter("gmail");
-        System.out.println(username);
-        System.out.println(password1);
-        System.out.println(password2);
-        System.out.println(birthdate);
-        System.out.println(gmail);
         String message = "";
         if (RegisterService.checkUsernameExist(username) == true ) {
             message = "This username had been used";

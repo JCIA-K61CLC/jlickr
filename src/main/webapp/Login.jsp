@@ -60,7 +60,7 @@
     <input type="hidden" name="action" value="login"/>
     <input placeholder="Username" type="text" value="" name="username"/>
     <input placeholder="Password" type="password" value="" name="password"/>
-    <button type="submit" action = "NextLogin.jsp" class="button">Log in</button>
+    <button type="submit" action = "UploadImage.jsp" class="button">Log in</button>
     </br></br>
     <p class="container">Don't have account?</br><a href="create.jsp" >Create account</a> </p>
 </form>

@@ -24,7 +24,4 @@ public class RegisterService {
         if (password.length() < 6) return false;
         else return true;
     }
-//    public static void main(String[] args) {
-//        System.out.println(checkUsernameExist("hoaithu"));
-//    }
 }
