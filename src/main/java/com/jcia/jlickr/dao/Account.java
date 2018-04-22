@@ -5,11 +5,17 @@ public class Account {
     private String userName;
     private String password;
     private String gmail;
-    private String birthdate;
-
-    public Account(String userName,String birthdate, String gmail, String password){
+    private String birthday;
+    public Account(String userName, String password){
         this.userName = userName;
-        this.birthdate = birthdate;
+        this.password = password;
+        this.birthday = "01-01-1998";
+        this.gmail = "abc@gmail.com";
+    }
+
+    public Account(String userName, String password,String birthday, String gmail){
+        this.userName = userName;
+        this.birthday = birthday;
         this.gmail = gmail;
         this.password = password;
 
@@ -31,12 +37,12 @@ public class Account {
         return userName;
     }
 
-    public void setBirthdate(String birthdate) {
-        this.birthdate = birthdate;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
-    public String getBirthdate() {
-        return birthdate;
+    public String getBirthday() {
+        return birthday;
     }
 
     public void setGmail(String gmail) {
@@ -57,6 +63,6 @@ public class Account {
 
     @Override
     public String toString() {
-        return "ID = " + idUser+" UserName = "+ this.userName+", Birthdate = "+this.birthdate+", Gmail = "+this.gmail +", Password = " + this.password;
+        return "ID = " + idUser+" UserName = "+ this.userName+", Birthdate = "+this.birthday +", Gmail = "+this.gmail +", Password = " + this.password;
     }
 }

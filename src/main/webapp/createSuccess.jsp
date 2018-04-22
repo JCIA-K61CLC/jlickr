@@ -13,6 +13,6 @@
 <body>
     <%= (String) request.getAttribute("message") %>
     </br>
-    <a href="Login.jsp">Login</a>
+    <a href="login.jsp">Login</a>
 </body>
 </html>

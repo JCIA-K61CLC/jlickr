@@ -21,7 +21,7 @@ public class RegisterServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password1 = request.getParameter("password1");
         String password2 = request.getParameter("password2");
-        String birthdate = request.getParameter("birthdate");
+        String birthday = request.getParameter("birthday");
         String gmail = request.getParameter("gmail");
         String message = "";
         if (RegisterService.checkUsernameExist(username) == true ) {
@@ -46,7 +46,7 @@ public class RegisterServlet extends HttpServlet {
                 else {
                     message = "Your account has been successfully created!";
                     request.setAttribute("message",message);
-                    Account a = new Account(username,birthdate,gmail,password1);
+                    Account a = new Account(username,password1,birthday,gmail);
                     accountDAO.addAccount(a);
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/createSuccess.jsp");
                     dispatcher.forward(request, response);

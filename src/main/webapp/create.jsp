@@ -67,7 +67,7 @@
     </br>
     <p class="container">Comfirm password:</p></br> <input placeholder="Re-password" type="password" id="confirmPassword" value="" name="password2" oninput="checkConfirmPassword()">
     </br>
-    <p class="container">Birthday:</p></br> <input placeholder="dd/mm/yyyy" type="text" id="birthdate" value="" name="birthdate">
+    <p class="container">Birthday:</p></br> <input placeholder="dd/mm/yyyy" type="text" id="birthday" value="" name="birthday">
     </br>
     <p class="container">Gmail:</p></br> <input placeholder="abc@gmail.com" type="text" id="gmail" name ="gmail" value="">
     </br>

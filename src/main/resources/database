@@ -1,20 +1,20 @@
 create database data;
 use data;
 create table accounts(
-			id_user int not null auto_increment,
-			nameuser varchar(255) not null,
-			birthdate date not null,
-			gmail varchar(255) not null,
+			id int not null auto_increment,
 			password varchar(255) not null,
-			primary key (id_user)
+			username varchar(255) not null,
+			birthday varchar(255) not null,
+			gmail varchar(255) not null,
+			primary key (id)
 		);
-insert into accounts(nameuser, birthdate, gmail, password)
-	values('Nguyen A', '1998-10-20', 'A@gmail.com', 'nguyenA');
+insert into accounts(username,password, birthday, gmail)
+	values('hoaithu', 'hoaithu', 'hoaithu@gmail.com', '20-10-1998');
+insert into accounts(username,password, birthday, gmail)
+	values('hieu', 'hieu', 'hieu@gmail.com', '25-12-1998');
 create table images(
-			id_user int not null,
-			link varchar(255) not null,
-			primary key (id_user, link),
-			FOREIGN KEY (id_user) REFERENCES accounts(id_user)
+			id int not null,
+			link varchar(255) not null
 		);
 grant all on data.* to username@localhost;
 

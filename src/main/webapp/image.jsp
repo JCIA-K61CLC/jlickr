@@ -11,9 +11,8 @@
     <title>Image</title>
 </head>
 <body>
-    <center>
         <h2>URL image: ${message}</h2>
-        <img src="${images}"/>
-    </center>
+        ${linkImage}
+        <img src="${linkImage}" width="250px" height="250px"/>
 </body>
 </html>

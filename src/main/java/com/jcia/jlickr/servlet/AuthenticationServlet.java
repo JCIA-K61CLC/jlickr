@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -35,22 +36,30 @@ public class AuthenticationServlet extends HttpServlet {
         if(accountName != null && accountPassword != null) {
             Account check = LoginService.CheckAcc(accountName, accountPassword);
             PrintWriter writer = resp.getWriter();
-            String nextJsp = "/UploadImage.jsp";
+            String nextJsp = "/home.jsp";
             if (check == null) {
-                nextJsp ="/Login.jsp";
+                nextJsp ="/login.jsp";
                 req.setAttribute("message", "Login failed!");
             } else {
                 req.setAttribute("message", "Welcome, " + accountName + "!");
+                //req.setAttribute("idUser", String.valueOf(check.getIdUser()));
+                int idUser = LoginService.getIdUser(accountName);
+                HttpSession session=req.getSession();
+                session.setAttribute("idUser",idUser);
+                System.out.println("Session idUser: " + session.getAttribute("idUser"));
+                req.setAttribute("idUser",idUser);
+                System.out.println("Request idUser: " + req.getAttribute("idUser"));
             }
-            req.setAttribute("idUser", check.getIdUser());
+
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJsp);
             dispatcher.forward(req, resp);
         }
     }
 
     private void forwardAccount(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        String nextJSP = "/Login.jsp";
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
-        dispatcher.forward(req, resp);
+        String nextJSP = "/login.jsp";
+//        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
+//        dispatcher.forward(req, resp);
+
     }
 }
