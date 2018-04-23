@@ -18,7 +18,7 @@
             margin: 5px;
             border: 1px solid #ccc;
             float: left;
-            width: 180px;
+            width: 250px;
         }
 
         div.gallery:hover {
@@ -26,8 +26,8 @@
         }
 
         div.gallery img {
-            width: 100%;
-            height: auto;
+            width: 250px;
+            height: 250px;
         }
 
         div.desc {
@@ -40,13 +40,17 @@
     <c:if test="${message ne null}">
         ${message}
     </c:if>
+    <center>
+        <c:forEach items="${linkImageList}" var="link">
 
-    <c:forEach items="${linkImageList}" var="link">
+            <div class="gallery">
+                <a target="_blank" href="${link}">
+                    <img src="${link}"  width="250px" height="250px">
+                </a>
+            </div>
+        </c:forEach>
+    </center>
 
-        <div class="gallery">
-            <img src="${link}" width="250px" height="200px">
-        </div>
-    </c:forEach>
 
 </body>
 </html>

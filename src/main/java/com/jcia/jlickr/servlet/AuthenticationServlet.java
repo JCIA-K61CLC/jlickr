@@ -42,13 +42,9 @@ public class AuthenticationServlet extends HttpServlet {
                 req.setAttribute("message", "Login failed!");
             } else {
                 req.setAttribute("message", "Welcome, " + accountName + "!");
-                //req.setAttribute("idUser", String.valueOf(check.getIdUser()));
                 int idUser = LoginService.getIdUser(accountName);
                 HttpSession session=req.getSession();
                 session.setAttribute("idUser",idUser);
-                System.out.println("Session idUser: " + session.getAttribute("idUser"));
-                req.setAttribute("idUser",idUser);
-                System.out.println("Request idUser: " + req.getAttribute("idUser"));
             }
 
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJsp);
