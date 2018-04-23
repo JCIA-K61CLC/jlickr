@@ -37,18 +37,16 @@
     </style>
 </head>
 <body>
-        <%--<c:forEach items="${linkImageList}" var="link">
-            <c:if test="${message} ne null">
-                ${message}
-            </c:if>
+    <c:if test="${message ne null}">
+        ${message}
+    </c:if>
 
-            <div class="gallery">
-                &lt;%&ndash;<a target="_blank" href="link">
-                    <img src="link" alt="Forest" width="600" height="400">
-                </a>&ndash;%&gt;
-                    <img src="${link}" width="250px" height="200px">
-            </div>
-        </c:forEach>--%>
+    <c:forEach items="${linkImageList}" var="link">
+
+        <div class="gallery">
+            <img src="${link}" width="250px" height="200px">
+        </div>
+    </c:forEach>
 
 </body>
 </html>

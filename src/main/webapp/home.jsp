@@ -16,9 +16,9 @@
     </c:if>
     <a href="uploadImage.jsp">Upload Image</a>
     </br>
-    <form action="AlbumServlet" method="get">
-        <a href="showAlbum.jsp">Album</a>
-    </form>
-
+    <%--<form action="AlbumServlet" method="get" >
+        <a href="AlbumServlet">Album</a>
+    </form>--%>
+    <a href="AlbumServlet">Album</a>
 </body>
 </html>

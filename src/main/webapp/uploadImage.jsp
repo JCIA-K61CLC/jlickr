@@ -13,23 +13,19 @@
     </style>
 </head>
 <body>
-<%--<input type="hidden" name="idUser" value="${idUser}">--%>
-        <form action="uploadImage" method="post" enctype="multipart/form-data">
+    <form action="uploadImage" method="post" enctype="multipart/form-data">
 
-            </br>
-            <%--<%
-                String idUser= (String) request.getAttribute("idUser");
-                session.setAttribute("idUser",idUser);
-            %>--%>
-            Select file to upload:
-            <input type="file" name="file"/>
-            </br></br>
-            <button type="submit">Upload</button>
-            </br>
-            <c:if test="${messageServlet ne null}">
-                ${messageServlet}
-            </c:if>
-        </form>
+        </br>
+
+        Select file to upload:
+        <input type="file" name="file"/>
+        </br></br>
+        <button type="submit">Upload</button>
+        </br>
+        <c:if test="${messageServlet ne null}">
+            ${messageServlet}
+        </c:if>
+    </form>
 
 </body>
 </html>

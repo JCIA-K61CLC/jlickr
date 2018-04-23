@@ -19,21 +19,16 @@ public class ShowAlbumServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        System.out.println("get");
         HttpSession session = req.getSession();
         int idUser = (int) session.getAttribute("idUser");
-        System.out.println("idUser" + idUser);
         List<String> linkImageList = imageDAO.getImagesById(idUser);
-        for (String link : linkImageList){
-            System.out.println(link.toString());
-        }
-        if (linkImageList.size() == 0){
+        if (linkImageList.isEmpty()){
             String message = "Empty!";
             req.setAttribute("message", message);
         }
         else
             req.setAttribute("linkImageList", linkImageList);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("showAlbum.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/showAlbum.jsp");
         dispatcher.forward(req, resp);
     }
 }
