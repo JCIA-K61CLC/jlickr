@@ -49,17 +49,6 @@ public class UploadImageServlet extends HttpServlet{
         ServletFileUpload upload = new ServletFileUpload(factory);
         upload.setFileSizeMax(MAX_FILE_SIZE);
         upload.setSizeMax(MAX_REQUEST_SIZE);
-//            Properties p = new Properties();
-//        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-//        InputStream input = classLoader.getResourceAsStream("app.properties");
-//        p.load(input);
-//        try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        String imageSource = p.getProperty("db.imageSource");
-//        String uploadPath = "C:\\Users\\Nguyen Hieu\\Downloads" + File.separator +UPLOAD_DIRECTORY;
 
         Properties p = new Properties();
         String webappURL = null;
@@ -136,64 +125,6 @@ public class UploadImageServlet extends HttpServlet{
             e.printStackTrace();
         }
 
-        /*String uploadPath = "C:\\Users\\Admin\\IdeaProjects\\jlickr\\src\\main\\webapp" + File.separator +UPLOAD_DIRECTORY;
-
-        System.out.println("Present Project Directory : "+ System.getProperty("user.dir"));
-        File uploadDir = new File(uploadPath);
-        System.out.println(uploadPath);
-        if (!uploadDir.exists()) {
-            uploadDir.mkdir();
-        }
-
-        try {
-            @SuppressWarnings("unchecked")
-            List<FileItem> formItems = upload.parseRequest(req);
-
-            if (formItems != null && formItems.size() > 0) {
-                for (FileItem item : formItems) {
-                    if (!item.isFormField()) {
-                        String fileName = new File(item.getName()).getName();
-                        String filePath = uploadPath + File.separator + fileName;
-                        File storeFile = new File(filePath);
-                        item.write(storeFile);
-
-//                            Image image = new Image(idUser, filePath);
-                        System.out.println("upload1");
-//                        System.out.println(idUserStr);
-                        System.out.println("upload2");
-                        System.out.println(filePath);
-//                            imageDAO.addImage(image);
-                        req.setAttribute("message", "Upload has been done successfully at : "+uploadPath  + File.separator + fileName);
-
-                        String link = "/" +UPLOAD_DIRECTORY+ "/" + fileName;
-                        System.out.println(link);
-
-                        if (req.getAttribute("idUser") != null){
-                            System.out.println(req.getAttribute("idUser"));
-                        }
-                        else {
-                            System.out.println("idUser request is null");
-                        }
-                        HttpSession session = req.getSession();
-
-                        if (session.getAttribute("idUser") != null){
-                            System.out.println( "idUser session: " + session.getAttribute("idUser"));
-                        }
-                        else {
-                            System.out.println("idUser session is null");
-                        }
-                        req.setAttribute("linkImage", link);
-                        int idUser = (int) session.getAttribute("idUser");
-                        Image image = new Image(idUser,link);
-//                        ImageDAO imageDAO = new ImageDAO();
-                        imageDAO.addImage(image);
-                    }
-                }
-            }
-        } catch (Exception ex) {
-            req.setAttribute("message", "There was an error: " + ex.getMessage());
-        }
-        getServletContext().getRequestDispatcher("/image.jsp").forward(req, resp);*/
     }
 
 }
