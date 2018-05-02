@@ -3,6 +3,8 @@ package com.jcia.jlickr.servlet;
 import com.jcia.jlickr.dao.Image;
 import com.jcia.jlickr.dao.ImageDAO;
 import com.jcia.jlickr.service.LoginService;
+import com.jcia.jlickr.service.UploadImageService;
+import com.sun.org.apache.xpath.internal.SourceTree;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.RequestContext;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -20,6 +22,9 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Properties;
 
@@ -82,16 +87,18 @@ public class UploadImageServlet extends HttpServlet{
                 for (FileItem item : formItems) {
                     if (!item.isFormField()) {
                         String fileName = new File(item.getName()).getName();
+//                        File fileOld = new File(uploadPath+File.separator+fileName);
+//                        File fileNew = new File(uploadPath+File.separator+UploadImageService.RenameFileUpload(fileName));
+//                        System.out.println(fileOld.getName());
+//                        System.out.println(fileNew.getName());
+//                        System.out.println(fileOld.renameTo(fileNew));
+//                        System.out.println(fileOld.getName());
+//                        fileOld.delete();
+//                        fileName = fileNew.getName();
                         String filePath = uploadPath + File.separator + fileName;
                         File storeFile = new File(filePath);
                         item.write(storeFile);
 
-//                            Image image = new Image(idUser, filePath);
-                        System.out.println("upload1");
-//                        System.out.println(idUserStr);
-                        System.out.println("upload2");
-                        System.out.println(filePath);
-//                            imageDAO.addImage(image);
                         req.setAttribute("message", "Upload has been done successfully at : "+uploadPath  + File.separator + fileName);
 
                         String link = "/" +UPLOAD_DIRECTORY+ "/" + fileName;
