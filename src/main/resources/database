@@ -9,9 +9,9 @@ create table accounts(
 			primary key (id)
 		);
 insert into accounts(username,password, birthday, gmail)
-	values('hoaithu', 'hoaithu', 'hoaithu@gmail.com', '20-10-1998');
+	values('hoaithu', 'hoaithu', '20-10-1998', 'hoaithu@gmail.com');
 insert into accounts(username,password, birthday, gmail)
-	values('hieu', 'hieu', 'hieu@gmail.com', '25-12-1998');
+	values('hieu', 'hieu', '25-12-1998', 'hieu@gmail.com');
 create table images(
 			id int not null,
 			link varchar(255) not null
