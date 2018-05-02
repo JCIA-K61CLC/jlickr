@@ -2,6 +2,7 @@ package com.jcia.jlickr.dao;
 
 import com.jcia.jlickr.database.DBUtils;
 
+import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +19,16 @@ public class ImageDAO {
         }
         return  null;
     }
-
-    public void addImage(Image image){
+//    public static void loadImage(String filePath){
+//        Connection connection = DBUtils.getConnection();
+//        int BUFFER_SIZE = 2048;
+//        String mysql = "select * from images";
+//        PreparedStatement statement = connection.prepareStatement()
+//    }
+    public void addImage(Image image ){
         Connection connection = DBUtils.getConnection();
-        String sqlCommand = "INSERT INTO images VALUES(?, ?)";
+
+        String sqlCommand = "INSERT INTO images(id, link) VALUES(?, ?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sqlCommand);
             ps.setInt(1, image.getIdUser());

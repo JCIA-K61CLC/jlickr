@@ -1,11 +1,22 @@
 package com.jcia.jlickr.dao;
 
+import java.sql.Blob;
+
 public class Image {
     private int idUser;
     private String link;
     private String caption;
     private String title;
     private String postdate;
+    private Blob photo;
+
+    public Blob getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Blob photo) {
+        this.photo = photo;
+    }
 
     public Image(int idUser, String link){
         this.idUser = idUser;

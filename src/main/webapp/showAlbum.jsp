@@ -1,12 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Nguyen Hieu
-  Date: 4/22/2018
-  Time: 5:28 PM
-  To change this template use File | Settings | File Templates.
-
---%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -14,42 +6,198 @@
 <head>
     <title>Album</title>
     <style>
-        div.gallery {
-            margin: 5px;
-            border: 1px solid #ccc;
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row > .column {
+            padding: 0 8px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column {
             float: left;
-            width: 250px;
+            width: 25%;
         }
 
-        div.gallery:hover {
-            border: 1px solid #777;
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: black;
+        }
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            height: 90%;
+            max-width: 500px;
+            max-height: 500px;
+        }
+        .close {
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 35px;
+            font-weight: bold;
         }
 
-        div.gallery img {
-            width: 250px;
-            height: 250px;
+        .close:hover,
+        .close:focus {
+            color: #999;
+            text-decoration: none;
+            cursor: pointer;
         }
 
-        div.desc {
-            padding: 15px;
+        .mySlides {
+            display: none;
+        }
+
+        .cursor {
+            cursor: pointer
+        }
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        img {
+            margin-bottom: -4px;
+        }
+
+        .caption-container {
             text-align: center;
+            background-color: black;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .demo {
+            opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+
+        img.hover-shadow {
+            transition: 0.3s
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
         }
     </style>
+
 </head>
 <body>
     <c:if test="${message ne null}">
         ${message}
     </c:if>
-    <center>
-        <c:forEach items="${linkImageList}" var="link">
+        <div class="row">
+            <c:forEach items="${linkImageList}" var="link">
+                <div class="column">
+                    <img src="${link.getLink()}"  style="height:250px;width: 250px" onclick="openModal();currentSlide(${link.getNumOrder()})" class="hover-shadow cursor">
+                </div>
+            </c:forEach>
+        </div>
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <c:forEach items="${linkImageList}" var="link">
+                <div class="mySlides">
+                    <img src="${link.getLink()}" style="width:450px;height: 450px">
+                </div>
+            </c:forEach>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+    <script>
+        function openModal() {
+            document.getElementById('myModal').style.display = "block";
+        }
 
-            <div class="gallery">
-                <a target="_blank" href="${link}">
-                    <img src="${link}"  width="250px" height="250px">
-                </a>
-            </div>
-        </c:forEach>
-    </center>
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+    </script>
 
 
 </body>
