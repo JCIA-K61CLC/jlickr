@@ -71,7 +71,6 @@ public class UploadImageServlet extends HttpServlet{
             }
 
             try {
-                @SuppressWarnings("unchecked")
                 List<FileItem> formItems = upload.parseRequest(req);
 
                 if (formItems != null && formItems.size() > 0) {

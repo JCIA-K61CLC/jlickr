@@ -44,11 +44,11 @@
         }
         .modal-content {
             position: relative;
-            background-color: #fefefe;
+            background-color: black;
             margin: auto;
             padding: 0;
-            width: 90%;
-            height: 90%;
+            width: 100%;
+            height: 100%;
             max-width: 500px;
             max-height: 500px;
         }
@@ -154,7 +154,7 @@
         <div class="modal-content">
             <c:forEach items="${linkImageList}" var="link">
                 <div class="mySlides">
-                    <img src="${link.getLink()}" style="width:450px;height: 450px">
+                    <img src="${link.getLink()}" style="width:auto;height:auto; max-height: 500px; max-width:500px;">
                 </div>
             </c:forEach>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
