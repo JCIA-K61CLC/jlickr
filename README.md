@@ -22,7 +22,7 @@ Tải mã nguồn tại [Jlickr](https://github.com/JCIA-K61CLC/jlickr)
 
 <img src="https://imgur.com/HQ5HCiL">
 
-<img width="1042" alt="petclinic-screenshot" src="https://cloud.githubusercontent.com/assets/838318/19727082/2aee6d6c-9b8e-11e6-81fe-e889a5ddfded.png">
+<img width="1042" alt="petclinic-screenshot" src="https://imgur.com/HQ5HCiL">
 
 Sau khi tải về và giải nén, ta được thư mục có các file như sau :
 
