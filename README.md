@@ -20,7 +20,7 @@
 
 Tải mã nguồn tại [Jlickr](https://github.com/JCIA-K61CLC/jlickr)
 
-<img src="https://www.dropbox.com/s/9oycbudq55y19jt/27661537_753292451547135_537898783_n.jpg">
+<img src="https://lh3.googleusercontent.com/jScgeXgMzOQNygGyrmCW9SwP6ljc2fgybbr5sixcNqnqPmFkuYkYkNnDxfv3ZeQtq0P7DhziI1b77V4KgIK5SE4gB3uVyikosdYesw3zxjsHBlq94S2bcYxauFuQCHAcTsc761Nh2YzlrNUcpcnEYE-yQcblIr59jYCcj05Tu4tUAvcCEb2fN2HsSq0dYmlhk8A3fyJowIlAvU9jzK8L60ssQxr-u3d6KJmEyaB5cXBYydt1NvBD_ACgZonGClcNavE2OZibvJxicV0kTmpIbBXNyVqMj8A1TTUNTqI4q8hbuEt8Oo4i6yegxcoszRsDOPcSW8cJLsYQ8_1uvQxdQYm5tPDEfs9-Y3humPVxEInHhsLA0Re_CIT9YY_A_qvvj9Rr67PLRAJogOvzuMgSZT_hPj-DJe4diWBdgNhAxyA8-WfwouUAv2Gqd3czv6xTErDYvp5Y8xRwIiFHWBU8nn0GHEOxiKaxk1WjHORgEkkrfYASuB4rHr8qq-ElJG08uTiDIZ33JwDe2Izu8-ZhPaO_yfqNmHxEi8eSrrzsYJkmjsGXpjsa6nBumO8bNtdLIsMeAWDvOxZQvk4DuVe7dNDG4uhNRmG_0tglbw9n5JTvkp0zXMp5-ogJ7s-rUKiHOJcOsGUKXd5LMJt4uoxuQwqgKt1GhIXq=w1495-h733-no">
 
 Sau khi tải về và giải nén, ta được thư mục có các file như sau :
 
