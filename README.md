@@ -14,10 +14,7 @@
 -	Cài đặt Intellij IDE [download](https://www.jetbrains.com/idea/download)
 -	Cài đặt hệ quản trị cơ sở dữ liệu MySql  [download](https://dev.mysql.com/downloads/mysql)
 -	Cài đặt Tomcat Server [download](https://tomcat.apache.org/download-80.cgi)
-```
-Tomcat là một ứng dụng chủ Appplication Server hỗ trợ chúng ta trong việc triển khai các ứng dụng web trên chính máy tính của mình. Thông thường các website chúng ta sử dụng trong cuộc sống hằng ngày được lưu trữ lại một server cố định, các server này có kiến trúc vô cùng phức tạp, dung lượng cực kì lớn, hoạt động liên tục. Để đẩy được website của chúng ta lên server, cần phải trải qua một số bước khá là phức tạp + phải có chi phí. Tomcat là công cụ giúp chúng ta chạy các website của mình ngay trên máy tính cá nhân mà không nhất thiết phải thuê server, hỗ trợ trong quá trình kiểm tra và chạy thử.
-```
-
+> Tomcat là một ứng dụng chủ Appplication Server hỗ trợ chúng ta trong việc triển khai các ứng dụng web trên chính máy tính của mình. Thông thường các website chúng ta sử dụng trong cuộc sống hằng ngày được lưu trữ lại một server cố định, các server này có kiến trúc vô cùng phức tạp, dung lượng cực kì lớn, hoạt động liên tục. Để đẩy được website của chúng ta lên server, cần phải trải qua một số bước khá là phức tạp + phải có chi phí. Tomcat là công cụ giúp chúng ta chạy các website của mình ngay trên máy tính cá nhân mà không nhất thiết phải thuê server, hỗ trợ trong quá trình kiểm tra và chạy thử.
 -	JDK >=8: Công cụ hỗ trợ phát triển ứng dụng Java, [download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 ----
