@@ -20,7 +20,7 @@
 
 Tải mã nguồn tại [Jlickr](https://github.com/JCIA-K61CLC/jlickr)
 
-<img src="https://drive.google.com/file/d/1kh7XLNONYTAD4IxNcXFD7NrjINUKMVFH/view?usp=sharing">
+<img src="https://imgur.com/HQ5HCiL">
 
 https://drive.google.com/file/d/1kh7XLNONYTAD4IxNcXFD7NrjINUKMVFH/view?usp=sharing
 
