@@ -20,9 +20,7 @@
 
 Tải mã nguồn tại [Jlickr](https://github.com/JCIA-K61CLC/jlickr)
 
-<img src="http://www.rosathepig.com/wp-content/uploads/2017/06/Rosa_sit.jpg">
-
-https://drive.google.com/file/d/1kh7XLNONYTAD4IxNcXFD7NrjINUKMVFH/view?usp=sharing
+<img src="https://www.dropbox.com/s/9oycbudq55y19jt/27661537_753292451547135_537898783_n.jpg">
 
 Sau khi tải về và giải nén, ta được thư mục có các file như sau :
 
