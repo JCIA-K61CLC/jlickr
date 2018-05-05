@@ -19,17 +19,17 @@
 
 ----
 
-Tải mã nguồn tại [Jlickr](https://github.com/JCIA-K61CLC/jlickr)
+## Tải mã nguồn tại [Jlickr](https://github.com/JCIA-K61CLC/jlickr)
 
 <img src="https://lh3.googleusercontent.com/jScgeXgMzOQNygGyrmCW9SwP6ljc2fgybbr5sixcNqnqPmFkuYkYkNnDxfv3ZeQtq0P7DhziI1b77V4KgIK5SE4gB3uVyikosdYesw3zxjsHBlq94S2bcYxauFuQCHAcTsc761Nh2YzlrNUcpcnEYE-yQcblIr59jYCcj05Tu4tUAvcCEb2fN2HsSq0dYmlhk8A3fyJowIlAvU9jzK8L60ssQxr-u3d6KJmEyaB5cXBYydt1NvBD_ACgZonGClcNavE2OZibvJxicV0kTmpIbBXNyVqMj8A1TTUNTqI4q8hbuEt8Oo4i6yegxcoszRsDOPcSW8cJLsYQ8_1uvQxdQYm5tPDEfs9-Y3humPVxEInHhsLA0Re_CIT9YY_A_qvvj9Rr67PLRAJogOvzuMgSZT_hPj-DJe4diWBdgNhAxyA8-WfwouUAv2Gqd3czv6xTErDYvp5Y8xRwIiFHWBU8nn0GHEOxiKaxk1WjHORgEkkrfYASuB4rHr8qq-ElJG08uTiDIZ33JwDe2Izu8-ZhPaO_yfqNmHxEi8eSrrzsYJkmjsGXpjsa6nBumO8bNtdLIsMeAWDvOxZQvk4DuVe7dNDG4uhNRmG_0tglbw9n5JTvkp0zXMp5-ogJ7s-rUKiHOJcOsGUKXd5LMJt4uoxuQwqgKt1GhIXq=w1495-h733-no">
 
-Sau khi tải về và giải nén, ta được thư mục có các file như sau :
+## Sau khi tải về và giải nén, ta được thư mục có các file như sau :
 
 <img src="https://lh3.googleusercontent.com/dkzDRpoe5RJpNOvu33Tg0AqEr1maQCbwyXamb4nUXENTW2eZxo5tQLFSePYwd7ygOqGHJQYXMMjjxHftNh45CZy8F0zOpX7V3yicQqinu4YOBS3vVSaXnzPbDLciyzU0tZU_VWGPzd_7budgEhNFBBg-u2AX5F5ES9ShQzyMNLQ9qhnLPWmHbyDtNyzeTuSU5HRctluVMHzmy-8cQ8pX3t3peADTpXN4qFcGEgH0Ov1uMugylMqUfmU7DyB9vwUuAKiatQaweI-uopJVwdzPuHHi2c-0zrz-RiOLWjUIrhLLf6gYEgJob110RuqyQJ74kU_cBFoDgUK-0kol-lBwVom4tpOWryOhYfISMZK4PzvKcAQQ9ODAcYhv0r8hlxoKfkgYOvo8yNk7439W8SS6pfmNcNEaOAeehem872AZD_zfC3LUi5Ky9eHH0KZwZDHST8BMfTbjAfoMX3pMxq4HeQlpjDJklZyYzaSs_KE1EPAypXvDlBRCYdaz9B_OsX2d2JKcODdaGol6zqPGDMUFCayFm93NUH_m01jkdtGTKjmWFBDY5Mfue85HgEJgF33gQXuw1shSmMjXzlELuuv8jH2e8PHkdMHLbIQSha8=w1058-h400-no">
 
 ----
 
-## Các bước thực hiện
+# Các bước thực hiện
 
 1) Trong Intellij, mở project bằng cách File -> Open -> Thư mục mã nguồn vừa tải về
 Trong cấu trúc thư mục, chú ý đến file src/main/resoures/app.properties.sample. Trong file là một số
@@ -40,11 +40,11 @@ thông số máy tính của bạn liên quan đến cấu hình máy :
 
 2) Để app có thể lấy được các thông số này, tạo một file mới có tên là “app.properties” bằng cách nháy chuột phải vào thư mục resoures->New->File. Nhập chính xác tên file là app.properties. Một file trống được hiện ra, lần lượt điền các thông số của máy tính vào sau dấu “=”, không cần cho trong ngoặc kép “”.
 
-> 
     - db.user: username tài khoản quản trị cơ sở dữ liệu.
     - db.password: password tải khoản quản trị cơ sở dữ liệu.
     - db.url: đường dẫn liên kết tới database. Tài liệu hướng dẫn này sử dụng Hệ quản trị cơ sở dữ liệu mysql và chạy trên localhost, database lưu trữ thông tin tài khoản của người dùng là "data", nên có thể điền mặc định là  “db.url=jdbc:mysql://localhost:3306/data”.
     - webappURL: đường dẫn tới thư mục webapp của project. Tại folder của project->src->main->webapp, copy đường dẫn trên thanh địa chỉ, đây chính là webappURL. (Chú ý, webappURL tùy từng máy mà có thể khác khau, không nhất thiết là giống hệt như ví dụ minh họa).
+    
 <img src="https://lh3.googleusercontent.com/XyfRpoGBD4EKb3nkfX6cKAgWnfR7phKVkix374n7Qgws9WIP3qVpFsMQdQvruKOzrmJdZFHDkEwNQQmsqSijyOPza69fnHIQUrIdJaS6myLBW7vmc9x5b0BL58vpHpZQFEcy9cZTyk6Qxr5xdUybsJpbQ_NdfPvg_EMjk-BA6rzjMEquGVo6kuflE90lnydh62sfeepIJZuw804uJEATPGBu7NTDRpSV42kaRseJmdy8rUSIli-yz0tONgXWde2ikSJOi__LDcdBHVr7TvZWnJQTdCNmfnVsYCNtR_tWKRw8Q8LfiYYa7F48Kpj89AR6rdXmflMQNU0vFHiYvKo7N0JXLYIJDlGiNfoxma1BhzSr1LwWdVJ526vi5FNI8CLimCKXp29boqX6CnLbn2_D78JmHOEqmkqBtgcYTx46EMYQPNJfTZdIWHvvCInrI3XLx0e_Z2r-aCzWbuePdhm15ZiLikGigaX6rf1hoPQtU9gdbznp_SnZPHczwbA8RnM3ucmKDHs0ACK8YOqo4VJHBp5Vi2YeKCOv7ekavoGxE_FWaZ2tuhqGRrBtuRMsrOotj7dtbwnLDAt60uvQ2vEymLHS6lHDDGHHG70w3Mg=w1606-h498-no">
 
 
