@@ -20,7 +20,7 @@
 
 Tải mã nguồn tại [Jlickr](https://github.com/JCIA-K61CLC/jlickr)
 
-<img src="https://imgur.com/HQ5HCiL">
+<img src="https://www.wikihow.com/Draw-a-Cartoon-Cat">
 
 https://drive.google.com/file/d/1kh7XLNONYTAD4IxNcXFD7NrjINUKMVFH/view?usp=sharing
 
