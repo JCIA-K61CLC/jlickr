@@ -22,6 +22,10 @@ Tải mã nguồn tại [Jlickr](https://github.com/JCIA-K61CLC/jlickr)
 
 <img src="https://imgur.com/HQ5HCiL">
 
+<blockquote class="imgur-embed-pub" lang="en" data-id="HQ5HCiL"><a href="//imgur.com/HQ5HCiL">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
+[img]https://i.imgur.com/HQ5HCiL.png[/img]
+
 Sau khi tải về và giải nén, ta được thư mục có các file như sau :
 
 <img src="https://imgur.com/CH1emKg">
