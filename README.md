@@ -20,7 +20,7 @@
 
 Tải mã nguồn tại [Jlickr](https://github.com/JCIA-K61CLC/jlickr)
 
-<img src="https://drive.google.com/file/d/1kh7XLNONYTAD4IxNcXFD7NrjINUKMVFH">
+<img src="http://www.rosathepig.com/wp-content/uploads/2017/06/Rosa_sit.jpg">
 
 https://drive.google.com/file/d/1kh7XLNONYTAD4IxNcXFD7NrjINUKMVFH/view?usp=sharing
 
