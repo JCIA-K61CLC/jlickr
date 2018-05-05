@@ -25,6 +25,9 @@ Tải mã nguồn tại [Jlickr](https://github.com/JCIA-K61CLC/jlickr)
 Sau khi tải về và giải nén, ta được thư mục có các file như sau :
 
 <img src="https://imgur.com/CH1emKg">
+
+----
+
 ## Các bước thực hiện
 
 1) Trong Intellij, mở project bằng cách File -> Open -> Thư mục mã nguồn vừa tải về
