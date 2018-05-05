@@ -39,16 +39,18 @@ thông số máy tính của bạn liên quan đến cấu hình máy :
 
 
 2) Để app có thể lấy được các thông số này, tạo một file mới có tên là “app.properties” bằng cách nháy chuột phải vào thư mục resoures->New->File. Nhập chính xác tên file là app.properties. Một file trống được hiện ra, lần lượt điền các thông số của máy tính vào sau dấu “=”, không cần cho trong ngoặc kép “”.
-'''
-Trong đó, “db.user” và “db.password” lần lượt là username và password tải khoản quản trị cơ sở dữ liệu của bạn trên máy tính. “db.url” là đường dẫn liên kết tới database. Tài liệu hướng dẫn này sử dụng Hệ quản trị cơ sở dữ liệu mysql và chạy trên localhost, database lưu trữ thông tin tài khoản của người dùng là "data", nên có thể điền mặc định là  “db.url=jdbc:mysql://localhost:3306/data”
-webappURL là đường dẫn tới thư mục webapp của project. Tại folder của project->src->main->webapp, copy đường dẫn trên thanh địa chỉ, đây chính là webappURL. (Chú ý, webappURL tùy từng máy mà có thể khác khau, không nhất thiết là giống hệt như ví dụ minh họa).
-'''
 
+> 
+    - db.user: username tài khoản quản trị cơ sở dữ liệu.
+    - db.password: password tải khoản quản trị cơ sở dữ liệu.
+    - db.url: đường dẫn liên kết tới database. Tài liệu hướng dẫn này sử dụng Hệ quản trị cơ sở dữ liệu mysql và chạy trên localhost, database lưu trữ thông tin tài khoản của người dùng là "data", nên có thể điền mặc định là  “db.url=jdbc:mysql://localhost:3306/data”.
+    - webappURL: đường dẫn tới thư mục webapp của project. Tại folder của project->src->main->webapp, copy đường dẫn trên thanh địa chỉ, đây chính là webappURL. (Chú ý, webappURL tùy từng máy mà có thể khác khau, không nhất thiết là giống hệt như ví dụ minh họa).
 <img src="https://lh3.googleusercontent.com/XyfRpoGBD4EKb3nkfX6cKAgWnfR7phKVkix374n7Qgws9WIP3qVpFsMQdQvruKOzrmJdZFHDkEwNQQmsqSijyOPza69fnHIQUrIdJaS6myLBW7vmc9x5b0BL58vpHpZQFEcy9cZTyk6Qxr5xdUybsJpbQ_NdfPvg_EMjk-BA6rzjMEquGVo6kuflE90lnydh62sfeepIJZuw804uJEATPGBu7NTDRpSV42kaRseJmdy8rUSIli-yz0tONgXWde2ikSJOi__LDcdBHVr7TvZWnJQTdCNmfnVsYCNtR_tWKRw8Q8LfiYYa7F48Kpj89AR6rdXmflMQNU0vFHiYvKo7N0JXLYIJDlGiNfoxma1BhzSr1LwWdVJ526vi5FNI8CLimCKXp29boqX6CnLbn2_D78JmHOEqmkqBtgcYTx46EMYQPNJfTZdIWHvvCInrI3XLx0e_Z2r-aCzWbuePdhm15ZiLikGigaX6rf1hoPQtU9gdbznp_SnZPHczwbA8RnM3ucmKDHs0ACK8YOqo4VJHBp5Vi2YeKCOv7ekavoGxE_FWaZ2tuhqGRrBtuRMsrOotj7dtbwnLDAt60uvQ2vEymLHS6lHDDGHHG70w3Mg=w1606-h498-no">
+
 
 3) Tạo database để chạy thử chương trình  bằng cách thực thi file "db/{schema,datadample}.sql". CÓ thể chạy bằng Command Prompt hoặc công cụ quản lý dữ liệu như Workbench, SQL Workshop,... Cách nhanh và đơn giản nhất là copy toàn bộ các dòng code trong 2 file "schema.sql" và "datasample.sql" và chạy nó trong command prompt. (Chú ý: các dòng code trong file "schema.sql" phải được thực thi trước "datasample.sql"). Việc khởi tạo database này chỉ cần thiết khi lần đầu tiên chạy thử app này.
 
-<img src="https://lh3.googleusercontent.com/XyfRpoGBD4EKb3nkfX6cKAgWnfR7phKVkix374n7Qgws9WIP3qVpFsMQdQvruKOzrmJdZFHDkEwNQQmsqSijyOPza69fnHIQUrIdJaS6myLBW7vmc9x5b0BL58vpHpZQFEcy9cZTyk6Qxr5xdUybsJpbQ_NdfPvg_EMjk-BA6rzjMEquGVo6kuflE90lnydh62sfeepIJZuw804uJEATPGBu7NTDRpSV42kaRseJmdy8rUSIli-yz0tONgXWde2ikSJOi__LDcdBHVr7TvZWnJQTdCNmfnVsYCNtR_tWKRw8Q8LfiYYa7F48Kpj89AR6rdXmflMQNU0vFHiYvKo7N0JXLYIJDlGiNfoxma1BhzSr1LwWdVJ526vi5FNI8CLimCKXp29boqX6CnLbn2_D78JmHOEqmkqBtgcYTx46EMYQPNJfTZdIWHvvCInrI3XLx0e_Z2r-aCzWbuePdhm15ZiLikGigaX6rf1hoPQtU9gdbznp_SnZPHczwbA8RnM3ucmKDHs0ACK8YOqo4VJHBp5Vi2YeKCOv7ekavoGxE_FWaZ2tuhqGRrBtuRMsrOotj7dtbwnLDAt60uvQ2vEymLHS6lHDDGHHG70w3Mg=w1606-h498-no">
+<img src="https://lh3.googleusercontent.com/XdnPKRqAuhCxdnIzkwQjXdCmd6gAusDoqoJtkkL_xrlUVyIzOaeTQjqcbRgCGOw-oNeBs6jzeLqqQeL-dFR1JTUNBI1tV2pBLErwRMfVayi8FPa7Md6UBf0yai9LyJx4YgpfJ23TnAPLFJ-QL7Ty2Oz9_W4_tvhYQSxygmJURmTAwxEwzS2e3-Co4Wh5DKHYw4QS1w0adAHpHrFrPWU2FJS2G2_xXEdFf2ZuJWdic3j2D3LdbBgcIlV__khXMQTb_67PZtNlnlB3RmBubSDIlZ1sc9vWafuBQWvQFuxnZqkPUisAxvlGJhyS85s9K5walz7qrwk_bvUoHtjtm_LZRJMZXvraQL4i7d3g3clXxswxritUL4DxQDvPDgVXsMr7QgJZCnrakW_UVYUmwKj7V-qe2SGMQXS58xpr8zQoVckzLeY_e921ATuCpDmsVj9tzs7KZDbUPSOwk8ewuCX5kVmk4rYnsFPfGKB0YU2_dpeHjZBusRLUXDW-GJycfd30vDJQ--g0QwRt7epgbNxlBI6LgsYZkm2Snbisvr0RLV-efw9SgBoKyHTSGqDxZwieidEcQuIdUj-K2rqX58T4j0v3Qz_AX2vZJWvYIoU=w1672-h651-no">
 
 4) Gán quyền truy cập database cho tài khoản quản trị MySQL Server. Việc này không cần thực hiện nếu truy cập bằng tài khoản "root".
 Để Intellij có thể chạy được project, cần cài đặt cấu hình trong phần  Edit Configuration:
