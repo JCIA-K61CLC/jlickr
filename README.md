@@ -14,6 +14,10 @@
 -	Cài đặt Intellij IDE [download](https://www.jetbrains.com/idea/download)
 -	Cài đặt hệ quản trị cơ sở dữ liệu MySql  [download](https://dev.mysql.com/downloads/mysql)
 -	Cài đặt Tomcat Server [download](https://tomcat.apache.org/download-80.cgi)
+```
+Tomcat là một ứng dụng chủ Appplication Server hỗ trợ chúng ta trong việc triển khai các ứng dụng web trên chính máy tính của mình. Thông thường các website chúng ta sử dụng trong cuộc sống hằng ngày được lưu trữ lại một server cố định, các server này có kiến trúc vô cùng phức tạp, dung lượng cực kì lớn, hoạt động liên tục. Để đẩy được website của chúng ta lên server, cần phải trải qua một số bước khá là phức tạp + phải có chi phí. Tomcat là công cụ giúp chúng ta chạy các website của mình ngay trên máy tính cá nhân mà không nhất thiết phải thuê server, hỗ trợ trong quá trình kiểm tra và chạy thử.
+```
+
 -	JDK >=8: Công cụ hỗ trợ phát triển ứng dụng Java, [download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
 ----
@@ -60,9 +64,7 @@ webappURL là đường dẫn tới thư mục webapp của project. Tại folde
 
 6) Trong hộp thoại Server, phần  Application server, chọn phiên bản Tomcat Server vừa tải về.
 <img src="https://lh3.googleusercontent.com/LjleqWh3WFfoDbIuOQ8r6bDWT2bGqE7XPFbDgf1LI8Qrqc7PndbpzQitpWVa_0VYhkBqLBjmwiwB5g_gqD1wQXMqy92DGyKbYVPF-WTNA-EM8TyQ5G6ZTL7WKietOIZgQBhUV2eDim8QUJCRSRvQZG-MpFEJNIgMepFWon0Qdg9sQXQI6xrFodh7rBBqm-CHedOm2jMEZDX63lEqjRkNzn9aGi1UASSmaudlOmIy0TwwlGqhK2LrpSOg0e0IevaKU17VXS0B2pur_6PpAR-T89TqvrppjqTKun2Dr4dRlodtQ2HG4XqRvh46bFPUgzPWDgasXNZeu7vIG074-Ng8k7i2Ba0GQIlRdogohVH8iBP7Nq4WPa-evK0abt6ELIRfZGuuuDgkwVgqFdQxlwPevh25rSTx4DEqazlsduhFAvzy6yWSbiKmBE4DG3FTREVt_yOl7zV_vsLuDzREkORRwZf6YJqksmhZvQNnkCVwCRnEa2PkZ5NezmmWuO4OlW3BXagkto2ZGJkoYq0fdKX2_wO8p6PApUdDr8dCDd_pYKh3T61Fkm4beCRSuYdCrtEoTJ1XudTiS_uOGOkaYhW79px_82jNq0muWd18Ebw=w1095-h936-no">
-'''
-Tomcat là một ứng dụng chủ Appplication Server hỗ trợ chúng ta trong việc triển khai các ứng dụng web trên chính máy tính của mình. Thông thường các website chúng ta sử dụng trong cuộc sống hằng ngày được lưu trữ lại một server cố định, các server này có kiến trúc vô cùng phức tạp, dung lượng cực kì lớn, hoạt động liên tục. Để đẩy được website của chúng ta lên server, cần phải trải qua một số bước khá là phức tạp + phải có chi phí. Tomcat là công cụ giúp chúng ta chạy các website của mình ngay trên máy tính cá nhân mà không nhất thiết phải thuê server, hỗ trợ trong quá trình kiểm tra và chạy thử.
-'''
+
 7) Trong hộp thoại  Deployment, Chọn dấu cộng -> Artifact -> Chọn kiểu exploded -> OK
 <img src="https://lh3.googleusercontent.com/Iivc4pBHm0kvUezwaFQTxSPt04Thh3n9-NFB9mEkHjGLNhg4djfTpERpe59UjOXaLeSkbjofV7PLm2x9nd6-QRKE3grMWUcxhmKfTRfl4XkMaxNBcReKr7xNoaoE9mDv9w8NgRcJ0HxXrKJKPDMlZ30xuOrsPF_ZfD0wEsZpy_bx8YKMixa5W9_3v0DE72R2ZMBsOXsZkS286BJGtbVDWVufSPVPeaZrUgMpUPlEa3hgB78yXAgL2sbWTbLhYk90cbvW_ex6hkkJNYUyaVT-V4P5muV9BfH4VaHHH7SAAnjwD29KIg2vk1YjHySvRcms0IvbLfQcTpsLkDe1n9rAULZ_hGZzU1NRbePub59h5m5tb7mvsOcdjB_YRiElZOFEUpzPGXpvJeFhmp6OtACF1bHcCg9IK2NU4vL-0e1tqqGp-OoCL6fcRkKH9Q-pS4UL0bLTUBWYzHI88N75UjCF1z3agG5D0HiPTTmN-Vvocr3pliLpJcZdqbM8DdyLCcZcgsEB2TpWOlu2jhQWDp-3PcBWsx2Ypgnj5pn6M2noKz_RU9q6cRL9-ZQqcfwgvLuLXaYmhZFW0Q19E__x1E4emPd4IK4wosH3J_FJ0RA=w1195-h928-no">
 
