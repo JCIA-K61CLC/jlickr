@@ -34,23 +34,26 @@
             display: none;
             position: fixed;
             z-index: 1;
-            padding-top: 100px;
+            /*padding-top: 100px;*/
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
+            overflow: hidden;
             background-color: black;
         }
         .modal-content {
+            top:50%;
+            left: 50%;
             position: relative;
             background-color: black;
-            margin: auto;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            max-width: 500px;
-            max-height: 500px;
+            /*margin: auto;
+            padding: 0;*/
+            /*width: 100%;
+            height: 100%;*/
+            /*max-width: 500px;
+            max-height: 500px;*/
+
         }
         .close {
             color: white;
@@ -70,6 +73,9 @@
 
         .mySlides {
             display: none;
+
+
+
         }
 
         .cursor {
@@ -151,15 +157,16 @@
         </div>
     <div id="myModal" class="modal">
         <span class="close cursor" onclick="closeModal()">&times;</span>
-        <div class="modal-content">
-            <c:forEach items="${linkImageList}" var="link">
+        <div class="modal-content" >
+            <c:forEach items="${linkImageList}" var="link" >
                 <div class="mySlides">
-                    <img src="${link.getLink()}" style="width:auto;height:auto; max-height: 500px; max-width:500px;">
+                    <img src="${link.getLink()}" style="width:auto;height:auto; max-height: 500px; max-width:500px; margin:auto;     transform: translate(-50%,-50%); ">
                 </div>
             </c:forEach>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
         </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
     <script>
         function openModal() {
