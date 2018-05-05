@@ -22,6 +22,8 @@ Tải mã nguồn tại [Jlickr](https://github.com/JCIA-K61CLC/jlickr)
 
 <img src="https://drive.google.com/file/d/1kh7XLNONYTAD4IxNcXFD7NrjINUKMVFH/view?usp=sharing">
 
+https://drive.google.com/file/d/1kh7XLNONYTAD4IxNcXFD7NrjINUKMVFH/view?usp=sharing
+
 Sau khi tải về và giải nén, ta được thư mục có các file như sau :
 
 <img src="https://imgur.com/CH1emKg">
