@@ -1,20 +1,37 @@
-##Jlickr application- Ứng dụng lưu trữ và chia sẻ ảnh
+# hello, This is Markdown Live Preview
 
-* Xây dựng dựa theo Flickr Application.
-* Tác giả:
-- Đoàn Thị Hoài Thu - K61CLC - Đại học Công Nghệ ĐHQGHN
-- Nguyễn Hữu Thị Hiếu - K61CLC - Đại học Công Nghệ ĐHQGHN
+----
+## what is Markdown?
+see [Wikipedia](http://en.wikipedia.org/wiki/Markdown)
 
-###Hướng dẫn chạy thử Jlick trên localhost bằng Intellij
-### Yêu cầu cho máy tính:
--	Cài đặt Intellij IDE [download](https://www.jetbrains.com/idea/download)
--	Cài đặt hệ quản trị cơ sở dữ liệu MySql  [download](https://dev.mysql.com/downloads/mysql)
--	Cài đặt Tomcat Server [download](https://tomcat.apache.org/download-80.cgi)
--	JDK >=8: Công cụ hỗ trợ phát triển ứng dụng Java, [download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+> Markdown is a lightweight markup language, originally created by John Gruber and Aaron Swartz allowing people "to write using an easy-to-read, easy-to-write plain text format, then convert it to structurally valid XHTML (or HTML)".
 
-Tải mã nguồn tại [Jlickr](https://github.com/JCIA-K61CLC/jlickr)
+----
+## usage
+1. Write markdown text in this textarea.
+2. Click 'HTML Preview' button.
 
-<img src="https://imgur.com/HQ5HCiL">
+----
+## markdown quick reference
+# headers
 
-Sau khi tải về và giải nén, ta được thư mục có các file như sau :
-<img src="https://imgur.com/CH1emKg">
+*emphasis*
+
+**strong**
+
+* list
+
+>block quote
+
+    code (4 spaces indent)
+[links](http://wikipedia.org)
+
+----
+## changelog
+* 17-Feb-2013 re-design
+
+----
+## thanks
+* [markdown-js](https://github.com/evilstreak/markdown-js)
+
+
