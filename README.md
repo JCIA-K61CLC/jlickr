@@ -1,4 +1,4 @@
-#Jlickr application- Ứng dụng lưu trữ và chia sẻ ảnh
+# Jlickr application- Ứng dụng lưu trữ và chia sẻ ảnh
 
 ----
 * Xây dựng dựa theo Flickr Application.
@@ -6,11 +6,11 @@
 - Đoàn Thị Hoài Thu - K61CLC - Đại học Công Nghệ ĐHQGHN
 - Nguyễn Hữu Thị Hiếu - K61CLC - Đại học Công Nghệ ĐHQGHN
 ----
-###Hướng dẫn chạy thử Jlick trên localhost bằng Intellij
+## Hướng dẫn chạy thử Jlick trên localhost bằng Intellij
 
 ----
 
-###Yêu cầu cho máy tính:
+## Yêu cầu cho máy tính:
 -	Cài đặt Intellij IDE [download](https://www.jetbrains.com/idea/download)
 -	Cài đặt hệ quản trị cơ sở dữ liệu MySql  [download](https://dev.mysql.com/downloads/mysql)
 -	Cài đặt Tomcat Server [download](https://tomcat.apache.org/download-80.cgi)
