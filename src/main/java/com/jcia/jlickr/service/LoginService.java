@@ -11,8 +11,11 @@ public class LoginService {
         AccountDAO accountDAO = new AccountDAO();
         List<Account> listAccount = accountDAO.getAllAccounts();
         for (Account acc : listAccount){
-            if (acc.getUserName().equals(username) && acc.getPassword().equals(password))
+            if (acc.getUserName().equals(username)) {
+                String encodePass = EncryptionService.convertToMD5(password);
+                if (acc.getPassword().equals(encodePass))
                 return  acc;
+            }
         }
         return null;
     }

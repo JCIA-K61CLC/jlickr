@@ -1,5 +1,6 @@
 package com.jcia.jlickr.dao;
 
+import java.io.InputStream;
 import java.sql.Blob;
 
 public class Image {
@@ -8,19 +9,39 @@ public class Image {
     private String caption;
     private String title;
     private String postdate;
-    private Blob photo;
+    private InputStream photo;
+    private String name;
+    private int numberOrder;
 
-    public Blob getPhoto() {
+    public int getNumberOrder() {
+        return numberOrder;
+    }
+
+    public void setNumberOrder(int numberOrder) {
+        this.numberOrder = numberOrder;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public InputStream getPhoto() {
         return photo;
     }
 
-    public void setPhoto(Blob photo) {
+    public void setPhoto(InputStream photo) {
         this.photo = photo;
     }
 
-    public Image(int idUser, String link){
+    public Image(int idUser, String name, InputStream inputStream){
         this.idUser = idUser;
-        this.link = link;
+        this.name = name;
+        this.photo = inputStream;
+
     }
 
     public void setIdUser(int idUser) {

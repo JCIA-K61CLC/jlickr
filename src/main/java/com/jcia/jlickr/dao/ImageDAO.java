@@ -28,25 +28,35 @@ public class ImageDAO {
     public void addImage(Image image ){
         Connection connection = DBUtils.getConnection();
 
-        String sqlCommand = "INSERT INTO images(id, link) VALUES(?, ?)";
+        String sqlCommand = "INSERT INTO images(id, name,photo) VALUES(?, ?,?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sqlCommand);
             ps.setInt(1, image.getIdUser());
-            ps.setString(2, image.getLink());
+            ps.setString(2, image.getName());
+            ps.setBlob(3, image.getPhoto());
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public List<String> getImagesById(int idUser){
-        List<String> ImageList = new ArrayList();
+    public List<Image> getImagesById(int idUser){
+        List<Image> ImageList = new ArrayList();
         Connection connection = DBUtils.getConnection();
         String sqlCommand = "select * from images where id = "+ idUser;
         ResultSet rs = retrieveData(sqlCommand);
         try {
+            int count = 1;
             while (rs.next()){
-                ImageList.add(rs.getString("link"));
+                Image image = new Image(rs.getInt("id"),rs.getString("name"),rs.getBinaryStream("photo"));
+                image.setNumberOrder(count);
+                count++;
+                System.out.println(rs.getInt("id"));
+                System.out.println(rs.getString("name"));
+                //ImageList.add(rs.getString("link"));
+                /*Blob blob = rs.getBlob("photo");
+                InputStream inputStream = blob.getBinaryStream();*/
+                ImageList.add(image);
             }
             return ImageList;
         } catch (SQLException e) {

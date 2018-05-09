@@ -23,9 +23,30 @@ public class ShowAlbumServlet extends HttpServlet{
         resp.setContentType("text/html");
         HttpSession session = req.getSession();
         int idUser = (int) session.getAttribute("idUser");
-        List<String> linkImageList = imageDAO.getImagesById(idUser);
-        List<ListImages> listImages = new ArrayList();
-        int count = 1;
+        /*List<String> linkImageList = imageDAO.getImagesById(idUser);
+        List<ListImages> listImages = new ArrayList();*/
+
+
+        List <Image> listImage = imageDAO.getImagesById(idUser);
+        for (int i = 0; i < listImage.size(); i++) {
+            System.out.println(listImage.get(i).getIdUser()+ " " + listImage.get(i).getLink());
+        }
+        System.out.println(listImage.size());
+        if (listImage == null) {
+            String message = "Empty!";
+            req.setAttribute("message", message);
+            System.out.println(message);
+        }
+        else {
+            String message = "Not empty";
+            req.setAttribute("message",message);
+            req.setAttribute("listImage", listImage);
+            System.out.println(message);
+        }
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/showAlbum.jsp");
+        dispatcher.forward(req, resp);
+
+        /*int count = 1;
         for(String linkImage : linkImageList){
             ListImages listImages1 = new ListImages(count, linkImage);
             listImages.add(listImages1);
@@ -36,8 +57,8 @@ public class ShowAlbumServlet extends HttpServlet{
             req.setAttribute("message", message);
         }
         else
-            req.setAttribute("linkImageList", listImages);
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/showAlbum.jsp");
-        dispatcher.forward(req, resp);
+            req.setAttribute("linkImageList", listImages);*/
+        /*RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/showAlbum.jsp");
+        dispatcher.forward(req, resp);*/
     }
 }

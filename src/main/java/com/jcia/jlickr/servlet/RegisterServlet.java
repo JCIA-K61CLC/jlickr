@@ -2,6 +2,7 @@ package com.jcia.jlickr.servlet;
 
 import com.jcia.jlickr.dao.Account;
 import com.jcia.jlickr.dao.AccountDAO;
+import com.jcia.jlickr.service.EncryptionService;
 import com.jcia.jlickr.service.RegisterService;
 
 import javax.servlet.RequestDispatcher;
@@ -44,9 +45,10 @@ public class RegisterServlet extends HttpServlet {
                     dispatcher.forward(request, response);
                 }
                 else {
+                    String encodePass = EncryptionService.convertToMD5(password1);
                     message = "Your account has been successfully created!";
                     request.setAttribute("message",message);
-                    Account a = new Account(username,password1,birthday,gmail);
+                    Account a = new Account(username,encodePass,birthday,gmail);
                     accountDAO.addAccount(a);
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/createSuccess.jsp");
                     dispatcher.forward(request, response);

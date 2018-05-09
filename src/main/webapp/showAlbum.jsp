@@ -1,10 +1,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%--
+  Created by IntelliJ IDEA.
+  User: Hoài Thu
+  Date: 5/9/2018
+  Time: 12:15 AM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Album</title>
+    <title>Reterving multiple images</title>
     <style>
         body {
             font-family: Verdana, sans-serif;
@@ -16,7 +22,7 @@
         }
 
         .row > .column {
-            padding: 0 8px;
+            padding: 8px 8px;
         }
 
         .row:after {
@@ -142,70 +148,77 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
         }
     </style>
-
 </head>
+
 <body>
-    <c:if test="${message ne null}">
-        ${message}
-    </c:if>
-        <div class="row">
-            <c:forEach items="${linkImageList}" var="link">
-                <div class="column">
-                    <img src="${link.getLink()}"  style="height:250px;width: 250px" onclick="openModal();currentSlide(${link.getNumOrder()})" class="hover-shadow cursor">
-                </div>
-            </c:forEach>
-        </div>
-    <div id="myModal" class="modal">
-        <span class="close cursor" onclick="closeModal()">&times;</span>
-        <div class="modal-content" >
-            <c:forEach items="${linkImageList}" var="link" >
-                <div class="mySlides">
-                    <img src="${link.getLink()}" style="width:auto;height:auto; max-height: 500px; max-width:500px; margin:auto;     transform: translate(-50%,-50%); ">
-                </div>
-            </c:forEach>
 
+<%--<img src="displayStream?id=1&name=/images/B612_20180224_185420.jpg"  width="300px" height="auto">
+<img src="displayStream?id=1&name=/images/white_cat.png" width ="200px" height="auto">
+<img src ="displayStream?id=1&name=/images/guilty_crown-18-shu-depressed-memories_of_his_arm-glow.jpg">--%>
+
+<%--<c:forEach items="${listImage}" var = "image">
+    <img src="displayStream?id=${image.getIdUser()}&name=${image.getLink()}" width = "auto" height="200px">
+</c:forEach>--%>
+
+<div class="row">
+    <c:forEach items="${listImage}" var="image">
+        <div class="column" id = "test">
+            <img src="display?id=${image.getIdUser()}&name=${image.getName()}"  id = "${image.getName()}" style="height:auto;width:300px" onclick="openModal();currentSlide(${image.getNumberOrder()})" class="hover-shadow cursor">
         </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </c:forEach>
+</div>
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content" >
+        <c:forEach items="${listImage}" var="image" >
+            <div class="mySlides">
+                <img src="display?id=${image.getIdUser()}&name=${image.getName()}" style="width:auto;height:auto; max-height: 500px; max-width:500px; margin:auto;     transform: translate(-50%,-50%); ">
+            </div>
+        </c:forEach>
+
     </div>
-    <script>
-        function openModal() {
-            document.getElementById('myModal').style.display = "block";
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+
+<script>
+    function openModal() {
+        document.getElementById('myModal').style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById('myModal').style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
         }
-
-        function closeModal() {
-            document.getElementById('myModal').style.display = "none";
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
         }
-
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("demo");
-            var captionText = document.getElementById("caption");
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            captionText.innerHTML = dots[slideIndex-1].alt;
-        }
-    </script>
-
-
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+</script>
 </body>
+
 </html>
