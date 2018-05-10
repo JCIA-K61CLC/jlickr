@@ -43,14 +43,10 @@ thông số máy tính của bạn liên quan đến cấu hình máy :
     - db.user: username tài khoản quản trị cơ sở dữ liệu.
     - db.password: password tải khoản quản trị cơ sở dữ liệu.
     - db.url: đường dẫn liên kết tới database. Tài liệu hướng dẫn này sử dụng Hệ quản trị cơ sở dữ liệu mysql và chạy trên localhost, database lưu trữ thông tin tài khoản của người dùng là "data", nên có thể điền mặc định là  “db.url=jdbc:mysql://localhost:3306/data”.
-    - webappURL: đường dẫn tới thư mục webapp của project. Tại folder của project->src->main->webapp, copy đường dẫn trên thanh địa chỉ, đây chính là webappURL. (Chú ý, webappURL tùy từng máy mà có thể khác khau, không nhất thiết là giống hệt như ví dụ minh họa).
-    
-<img src="https://i.imgur.com/5wQNvbH.png">
 
+3) Tạo database để chạy thử chương trình  bằng cách thực thi file "db/schema.sql". CÓ thể chạy bằng Command Prompt hoặc công cụ quản lý dữ liệu như Workbench, SQL Workshop,... Cách nhanh và đơn giản nhất là copy toàn bộ các dòng code trong file "schema.sql" và chạy trong command prompt. Việc khởi tạo database này chỉ cần thiết khi lần đầu tiên chạy thử app này.
 
-3) Tạo database để chạy thử chương trình  bằng cách thực thi file "db/{schema,datadample}.sql". CÓ thể chạy bằng Command Prompt hoặc công cụ quản lý dữ liệu như Workbench, SQL Workshop,... Cách nhanh và đơn giản nhất là copy toàn bộ các dòng code trong 2 file "schema.sql" và "datasample.sql" và chạy nó trong command prompt. (Chú ý: các dòng code trong file "schema.sql" phải được thực thi trước "datasample.sql"). Việc khởi tạo database này chỉ cần thiết khi lần đầu tiên chạy thử app này.
-
-<img src="https://i.imgur.com/0kqxr5R.png">
+<img src="https://i.imgur.com/jlov73D.png">
 
 4) (Không bắt buộc) Gán quyền truy cập database cho tài khoản quản trị MySQL Server. Việc này không cần thực hiện nếu truy cập bằng tài khoản "root".
 5) Để Intellij có thể chạy được project, cần cài đặt cấu hình trong phần  Edit Configuration:
