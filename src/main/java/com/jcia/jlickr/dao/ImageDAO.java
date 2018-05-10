@@ -40,6 +40,21 @@ public class ImageDAO {
         }
     }
 
+    public List<Image> deleteImage(String name, int idUser){
+        Connection connection = DBUtils.getConnection();
+        String sqlCommand ="DELETE FROM images WHERE name like ? AND id = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sqlCommand);
+            System.out.println("dao " + name);
+            ps.setString(1, name);
+            ps.setInt(2, idUser);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return getImagesById(idUser);
+    }
+
     public List<Image> getImagesById(int idUser){
         List<Image> ImageList = new ArrayList();
         Connection connection = DBUtils.getConnection();

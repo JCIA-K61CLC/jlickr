@@ -2,6 +2,7 @@ package com.jcia.jlickr.servlet;
 
 import com.jcia.jlickr.dao.Image;
 import com.jcia.jlickr.dao.ImageDAO;
+import com.jcia.jlickr.service.UploadImageService;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -29,8 +30,7 @@ public class UploadImageServlet extends HttpServlet{
             System.out.println(filePart.getSize());
             System.out.println(filePart.getContentType());
             System.out.println(filePart.getSubmittedFileName());
-            String nameImage = filePart.getSubmittedFileName();
-            System.out.println(nameImage);
+
 
             // obtains input stream of the upload file
             inputStream = filePart.getInputStream();
@@ -42,10 +42,13 @@ public class UploadImageServlet extends HttpServlet{
                 System.out.println("idUser session is null");
             }
             int idUser = (int) session.getAttribute("idUser");
+            String nameImage = UploadImageService.RenameFileUpload(filePart.getSubmittedFileName(), idUser);
+            System.out.println(nameImage);
             Image image = new Image(idUser, nameImage, inputStream);
             ImageDAO imageDAO = new ImageDAO();
             imageDAO.addImage(image);
             //UploadImagesToFile.readBlob();
+            request.setAttribute("image", image);
             System.out.println("Image had been added to database");
             getServletContext().getRequestDispatcher("/image.jsp").forward(request, response);
         }

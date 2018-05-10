@@ -28,7 +28,7 @@ public class DisplayPhotoServlet extends HttpServlet {
         ResultSet rs = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/data","hoaithu","quangtuan");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/data","nhthieu","nguyenhieu");
             stmt = con.createStatement();
             String sqlCommand = "select photo from images where id = ? and name = ?";
             PreparedStatement ps = con.prepareStatement(sqlCommand);
