@@ -7,12 +7,16 @@ import java.security.NoSuchAlgorithmException;
 public class Encryption {
     public static String convertToMD5(String str) {
         String result = "";
+        String salt = "qwert";
+        str = str.concat(salt);
+        System.out.println(str);
         MessageDigest digest;
         try {
             digest = MessageDigest.getInstance("MD5");
             digest.update(str.getBytes());
             BigInteger bigInteger = new BigInteger(1,digest.digest());
             result = bigInteger.toString(16);
+
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }

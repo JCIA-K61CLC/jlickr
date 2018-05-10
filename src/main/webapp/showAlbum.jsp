@@ -233,7 +233,8 @@
         <c:forEach items="${listImage}" var="image" >
             <div class="mySlides">
                 <img src="display?id=${image.getIdUser()}&name=${image.getName()}" style="width:auto;height:auto; max-height: 500px; max-width:500px; margin:auto;     transform: translate(-50%,-50%); ">
-                <a href="deleteImage" onclick="confirm('Are you sure?')">Delete</a>
+
+                <button onclick="deleteImage('${image.getName()}');">Delete</button>
             </div>
         </c:forEach>
 
@@ -244,6 +245,11 @@
 </div>
 
 <script>
+
+    function deleteImage(imageName) {
+        alert(imageName);
+        console.log(imageName);
+    }
 
     function openModal() {
         document.getElementById('myModal').style.display = "block";

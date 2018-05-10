@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Nguyen Hieu
@@ -26,16 +27,29 @@
 
 </head>
 <body>
-    <form action="uploadImage" method="post">
-        <h2>URL image: ${message}</h2>
-        <img src="display?id=${image.getIdUser()}&name=${image.getName()}" width=auto height="250px"/>
-        </br>
-       <%-- <button type="submit" action="uploadImage.jsp">Upload new image</button>
-        <button type="submit" action="AlbumServlet">Show your album</button>--%>
-        <a href="uploadImage.jsp">Upload new image</a>
-        <a href="AlbumServlet">Show your album</a>
 
-    </form>
+    <c:if test="${isImage=='0'}">
+        <h1 align="center">${message}</h1>
+        <a href="uploadImage.jsp">Upload new image</a>
+    </c:if>
+    <c:if test="${isImage=='1'}">
+            <h2>URL image: ${message}</h2>
+            <img src="display?id=${image.getIdUser()}&name=${image.getName()}" width="auto" height="250px"/>
+            </br>
+                <%-- <button type="submit" action="uploadImage.jsp">Upload new image</button>
+                 <button type="submit" action="AlbumServlet">Show your album</button>--%>
+
+    </c:if>
+    <a href="uploadImage.jsp">Upload new image</a>
+    <a href="AlbumServlet">Show your album</a>
+
+
+
+
+
+
+
+
 
 </body>
 </html>
