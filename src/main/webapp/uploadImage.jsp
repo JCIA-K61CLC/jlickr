@@ -13,7 +13,7 @@
     </style>
 </head>
 <body>
-    <form action="uploadImage" method="post" enctype="multipart/form-data">
+    <form action="uploadImage2" method="post" enctype="multipart/form-data">
 
         </br>
 

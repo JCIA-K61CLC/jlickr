@@ -53,7 +53,7 @@
 </head>
 <body>
 
-<form action="login" method ="post" class="form h1">
+<form action="login" method ="get" class="form h1">
     <c:if test="${message ne null}" style = "color:red">
         ${message}
     </c:if>
