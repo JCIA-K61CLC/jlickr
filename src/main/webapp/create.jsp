@@ -56,7 +56,7 @@
 </head>
 <body>
 
-<form action="register" method="post" class="form h1">
+<form action="register" method="get" class="form h1">
     <h2 class="container">Create your account</h2>
     <h3 id="message"></h3>
     <h3 id="error"></h3>

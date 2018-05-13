@@ -31,6 +31,7 @@ public class AuthenticationServlet extends HttpServlet {
 
     private void getAccount(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
+        HttpSession session = req.getSession();
         String accountName = req.getParameter("username");
         String accountPassword = req.getParameter("password");
         if(accountName != null && accountPassword != null) {
@@ -41,9 +42,8 @@ public class AuthenticationServlet extends HttpServlet {
                 nextJsp ="/login.jsp";
                 req.setAttribute("message", "Login failed!");
             } else {
-                req.setAttribute("message", "Welcome, " + accountName + "!");
+                session.setAttribute("message", "Welcome, " + accountName + "!");
                 int idUser = LoginService.getIdUser(accountName);
-                HttpSession session=req.getSession();
                 session.setAttribute("idUser",idUser);
             }
 
@@ -58,4 +58,8 @@ public class AuthenticationServlet extends HttpServlet {
 //        dispatcher.forward(req, resp);
 
     }
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req,resp);
+    }
+
 }

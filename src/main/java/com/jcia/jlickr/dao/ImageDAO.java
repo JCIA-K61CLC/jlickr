@@ -3,6 +3,7 @@ package com.jcia.jlickr.dao;
 import com.jcia.jlickr.database.DBUtils;
 
 import java.io.File;
+import java.io.PrintWriter;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,36 @@ public class ImageDAO {
             e.printStackTrace();
         }
         return  null;
+    }
+
+    public Blob getImageByName(int id, String name) {
+        Connection con = DBUtils.getConnection();
+        String sqlCommand = "select photo from images where id = ? and name = ?";
+        ImageDAO imageDAO = new ImageDAO();
+        PreparedStatement ps = null;
+        ResultSet rs;
+        Blob image;
+        try {
+            ps = con.prepareStatement(sqlCommand);
+            ps.setInt(1,id);
+            ps.setString(2,name);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                image = rs.getBlob(1);
+                return image;
+            }
+            else {
+                System.out.println("Display Blob Example");
+                System.out.println("image not found for given id>");
+                return null;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+
+
     }
 //    public static void loadImage(String filePath){
 //        Connection connection = DBUtils.getConnection();
@@ -38,6 +69,21 @@ public class ImageDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<Image> deleteImage(String name, int idUser){
+        Connection connection = DBUtils.getConnection();
+        String sqlCommand ="DELETE FROM images WHERE name like ? AND id = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sqlCommand);
+            System.out.println("dao " + name);
+            ps.setString(1, name);
+            ps.setInt(2, idUser);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return getImagesById(idUser);
     }
 
     public List<Image> getImagesById(int idUser){

@@ -56,6 +56,7 @@
     <div class="navbar">
         <a href="uploadImage.jsp">Upload</a>
         <a href="AlbumServlet">Album</a>
+        <a style="float: right" href="login.jsp">Log out</a>
     </div>
 </body>
 </html>

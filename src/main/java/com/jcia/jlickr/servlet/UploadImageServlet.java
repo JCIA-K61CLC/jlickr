@@ -2,6 +2,7 @@ package com.jcia.jlickr.servlet;
 
 import com.jcia.jlickr.dao.Image;
 import com.jcia.jlickr.dao.ImageDAO;
+import com.jcia.jlickr.service.UploadImageService;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -29,34 +30,41 @@ public class UploadImageServlet extends HttpServlet{
             System.out.println(filePart.getSize());
             System.out.println(filePart.getContentType());
             System.out.println(filePart.getSubmittedFileName());
-            String nameImage = filePart.getSubmittedFileName();
-            System.out.println(nameImage);
+
 
             // obtains input stream of the upload file
-            inputStream = filePart.getInputStream();
-            HttpSession session = request.getSession();
-            if (session.getAttribute("idUser") != null){
-                System.out.println( "idUser session: " + session.getAttribute("idUser"));
+            String fileType = filePart.getContentType();
+            if (fileType.startsWith("image") == false ){
+                String message = "Upload failed...Only support for image";
+                String isImage = "0";
+                request.setAttribute("isImage",isImage);
+                request.setAttribute("message", message);
+                getServletContext().getRequestDispatcher("/image.jsp").forward(request, response);
+
             }
             else {
-                System.out.println("idUser session is null");
+                inputStream = filePart.getInputStream();
+                HttpSession session = request.getSession();
+                if (session.getAttribute("idUser") != null){
+                    System.out.println( "idUser session: " + session.getAttribute("idUser"));
+                }
+                else {
+                    System.out.println("idUser session is null");
+                }
+                int idUser = (int) session.getAttribute("idUser");
+                String nameImage = UploadImageService.RenameFileUpload(filePart.getSubmittedFileName(), idUser);
+                System.out.println(nameImage);
+                Image image = new Image(idUser, nameImage, inputStream);
+                ImageDAO imageDAO = new ImageDAO();
+                imageDAO.addImage(image);
+                //UploadImagesToFile.readBlob();
+                request.setAttribute("image", image);
+                System.out.println("Image had been added to database");
+                String isImage = "1";
+                request.setAttribute("isImage",isImage);
+                getServletContext().getRequestDispatcher("/image.jsp").forward(request, response);
             }
-            int idUser = (int) session.getAttribute("idUser");
-            Image image = new Image(idUser, nameImage, inputStream);
-            ImageDAO imageDAO = new ImageDAO();
-            imageDAO.addImage(image);
-            //UploadImagesToFile.readBlob();
-            System.out.println("Image had been added to database");
-            getServletContext().getRequestDispatcher("/image.jsp").forward(request, response);
         }
-        else {
-            System.out.println("File part is NULL");
-        }
-
-        //Connection connection = DBUtils.getConnection();
-
-
-
 
 
     }

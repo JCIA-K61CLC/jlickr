@@ -11,16 +11,62 @@
 <html>
 <head>
     <title>Reterving multiple images</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        *{margin: 0;padding: 0;}
         body {
             font-family: Verdana, sans-serif;
             margin: 0;
+            background: #fff;
+            color: #222;
+            font-family: Arial, Tahoma, Verdana, sans-serif;
+            font-size: 12px;
+            height: 100%;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            /*text-align: center;*/
+            overflow: hidden;
         }
 
         * {
             box-sizing: border-box;
         }
+        *html body { padding:120px 0 50px 0; }
+        #header {
+            background: #1abc9c;
+            border-bottom: 5px solid #1abc9c;
+            color: #fff;
+            height: 90px;
+            line-height: 90px;
+            /*text-align: center;*/
+            /*position: absolute;*/
+            padding: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
 
+        #header h1 {
+            font-size: 200%;
+            margin: 0;
+
+            /*text-transform: uppercase;*/
+        }
+        #content {
+            position: fixed;
+            top: 120px;
+            left: 0;
+            bottom: 50px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+            overflow: auto;
+        }
+        * html #content {
+            height:100%;
+            width:100%;
+        }
         .row > .column {
             padding: 8px 8px;
         }
@@ -33,7 +79,7 @@
 
         .column {
             float: left;
-            width: 25%;
+            /*width: 25%;*/
         }
 
         .modal {
@@ -147,6 +193,11 @@
         .hover-shadow:hover {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
         }
+        i{
+            padding-left: 20px;
+            padding-right: 10px;
+
+        }
     </style>
 </head>
 
@@ -159,11 +210,20 @@
 <%--<c:forEach items="${listImage}" var = "image">
     <img src="displayStream?id=${image.getIdUser()}&name=${image.getLink()}" width = "auto" height="200px">
 </c:forEach>--%>
+<div id="header" >
+    <h1>
+        <i class="fa fa-bars" action="home.jsp"></i>
+        <a style="text-decoration: none;padding-right: 490px;color: white;" href="home.jsp">Home</a>
+       Album
+    </h1>
 
+
+</div>
+<div id="content">
 <div class="row">
     <c:forEach items="${listImage}" var="image">
         <div class="column" id = "test">
-            <img src="display?id=${image.getIdUser()}&name=${image.getName()}"  id = "${image.getName()}" style="height:auto;width:300px" onclick="openModal();currentSlide(${image.getNumberOrder()})" class="hover-shadow cursor">
+            <img src="display?id=${image.getIdUser()}&name=${image.getName()}"  id = "${image.getName()}" style="height:250px;width:auto" onclick="openModal();currentSlide(${image.getNumberOrder()})" class="hover-shadow cursor">
         </div>
     </c:forEach>
 </div>
@@ -173,6 +233,8 @@
         <c:forEach items="${listImage}" var="image" >
             <div class="mySlides">
                 <img src="display?id=${image.getIdUser()}&name=${image.getName()}" style="width:auto;height:auto; max-height: 500px; max-width:500px; margin:auto;     transform: translate(-50%,-50%); ">
+
+                <button onclick="deleteImage('${image.getName()}');">Delete</button>
             </div>
         </c:forEach>
 
@@ -180,11 +242,18 @@
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
-
+</div>
 
 <script>
+
+    function deleteImage(imageName) {
+        alert(imageName);
+        console.log(imageName);
+    }
+
     function openModal() {
         document.getElementById('myModal').style.display = "block";
+
     }
 
     function closeModal() {
