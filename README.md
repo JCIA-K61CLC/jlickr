@@ -33,27 +33,21 @@
 
 1) Trong Intellij, mở project bằng cách File -> Open -> Thư mục mã nguồn vừa tải về
 Trong cấu trúc thư mục, chú ý đến file src/main/resoures/app.properties.sample. Trong file là một số
-thông số máy tính của bạn liên quan đến cấu hình máy :
-
-<img src="https://i.imgur.com/bzUB9gm.png">
-
-
-2) Để app có thể lấy được các thông số này, tạo một file mới có tên là “app.properties” bằng cách nháy chuột phải vào thư mục resoures->New->File. Nhập chính xác tên file là app.properties. Một file trống được hiện ra, lần lượt điền các thông số của máy tính vào sau dấu “=”, không cần cho trong ngoặc kép “”.
+thông số máy tính của bạn liên quan đến cấu hình máy. Để app có thể lấy được các thông số này, tạo một file mới có tên là “app.properties” bằng cách nháy chuột phải vào thư mục resoures->New->File. Nhập chính xác tên file là app.properties. Một file trống được hiện ra, lần lượt điền các thông số của máy tính vào sau dấu “=”, không cần cho trong ngoặc kép “”.
 
     - db.user: username tài khoản quản trị cơ sở dữ liệu.
     - db.password: password tải khoản quản trị cơ sở dữ liệu.
     - db.url: đường dẫn liên kết tới database. Tài liệu hướng dẫn này sử dụng Hệ quản trị cơ sở dữ liệu mysql và chạy trên localhost, database lưu trữ thông tin tài khoản của người dùng là "data", nên có thể điền mặc định là  “db.url=jdbc:mysql://localhost:3306/data”.
-    - webappURL: đường dẫn tới thư mục webapp của project. Tại folder của project->src->main->webapp, copy đường dẫn trên thanh địa chỉ, đây chính là webappURL. (Chú ý, webappURL tùy từng máy mà có thể khác khau, không nhất thiết là giống hệt như ví dụ minh họa).
-    
-<img src="https://i.imgur.com/5wQNvbH.png">
+
+<img src="https://i.imgur.com/BszBsnX.png">
 
 
-3) Tạo database để chạy thử chương trình  bằng cách thực thi file "db/{schema,datadample}.sql". CÓ thể chạy bằng Command Prompt hoặc công cụ quản lý dữ liệu như Workbench, SQL Workshop,... Cách nhanh và đơn giản nhất là copy toàn bộ các dòng code trong 2 file "schema.sql" và "datasample.sql" và chạy nó trong command prompt. (Chú ý: các dòng code trong file "schema.sql" phải được thực thi trước "datasample.sql"). Việc khởi tạo database này chỉ cần thiết khi lần đầu tiên chạy thử app này.
+2) Tạo database để chạy thử chương trình  bằng cách thực thi file "db/schema.sql". CÓ thể chạy bằng Command Prompt hoặc công cụ quản lý dữ liệu như Workbench, SQL Workshop,... Cách nhanh và đơn giản nhất là copy toàn bộ các dòng code trong file "schema.sql" và chạy trong command prompt. Việc khởi tạo database này chỉ cần thiết khi lần đầu tiên chạy thử app này.
 
-<img src="https://i.imgur.com/0kqxr5R.png">
+<img src="https://i.imgur.com/jlov73D.png">
 
-4) (Không bắt buộc) Gán quyền truy cập database cho tài khoản quản trị MySQL Server. Việc này không cần thực hiện nếu truy cập bằng tài khoản "root".
-5) Để Intellij có thể chạy được project, cần cài đặt cấu hình trong phần  Edit Configuration:
+3) (Không bắt buộc) Gán quyền truy cập database cho tài khoản quản trị MySQL Server. Việc này không cần thực hiện nếu truy cập bằng tài khoản "root".
+4) Để Intellij có thể chạy được project, cần cài đặt cấu hình trong phần  Edit Configuration:
 
 <img src="https://i.imgur.com/d5h3Y9d.png">
 
