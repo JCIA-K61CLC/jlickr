@@ -3,21 +3,12 @@ package com.jcia.jlickr.servlet;
 import com.jcia.jlickr.dao.Image;
 import com.jcia.jlickr.dao.ImageDAO;
 import com.jcia.jlickr.service.UploadImageService;
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.util.List;
-import java.util.Properties;
 
 @WebServlet(urlPatterns = "/uploadImage")
 public class UploadImageServlet extends HttpServlet{

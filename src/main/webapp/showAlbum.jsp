@@ -201,7 +201,7 @@
     </style>
 </head>
 
-<body>
+<body id="body">
 
 <%--<img src="displayStream?id=1&name=/images/B612_20180224_185420.jpg"  width="300px" height="auto">
 <img src="displayStream?id=1&name=/images/white_cat.png" width ="200px" height="auto">
@@ -234,7 +234,7 @@
             <div class="mySlides">
                 <img src="display?id=${image.getIdUser()}&name=${image.getName()}" style="width:auto;height:auto; max-height: 500px; max-width:500px; margin:auto;     transform: translate(-50%,-50%); ">
 
-                <button onclick="deleteImage('${image.getName()}');">Delete</button>
+                <button onclick="deleteImage('${image.getName()}');closeModal()">Delete</button>
             </div>
         </c:forEach>
 
@@ -247,8 +247,16 @@
 <script>
 
     function deleteImage(imageName) {
-        alert(imageName);
-        console.log(imageName);
+        /*alert(imageName);
+        console.log(imageName);*/
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                location.reload();
+            }
+        };
+        xhttp.open("GET", "deleteImage?name=" + imageName, true);
+        xhttp.send();
     }
 
     function openModal() {
